@@ -54,17 +54,12 @@ body {
 
 .logo {
   display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-primary);
-  color: var(--color-white);
+}
+
+.logo__mark {
+  width: 48px;
+  height: 48px;
   border-radius: 8px;
-  padding: 10px 14px;
-  font-weight: 800;
-  font-size: 11px;
-  line-height: 1.3;
-  letter-spacing: 0.5px;
 }
 
 .mobile-menu {
@@ -111,13 +106,13 @@ body {
   /* Su schermi larghi la griglia diventa 3 colonne: 4:3 e 1:1 occupano
      l'intera altezza (2 righe), le due 16:9 si impilano nella terza colonna. */
   .hero__mosaic {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     height: 420px;
   }
 
   .hero__tile {
-    width: auto;
+    width: 100%;
     height: 100%;
   }
 
