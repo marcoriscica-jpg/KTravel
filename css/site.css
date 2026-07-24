@@ -294,6 +294,7 @@ body {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 40px var(--gutter);
+  background: var(--color-grey-20);
   display: flex;
   flex-direction: column;
   gap: 32px;
