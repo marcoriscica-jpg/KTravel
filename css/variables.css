@@ -26,13 +26,12 @@
   /* Spaziature / layout */
   --container-max: 1440px;
   --gutter: 24px;
-  --header-height: 80px;
+  --header-height: clamp(72px, 67.43px + 1.43vw, 88px);
 }
 
 @media (min-width: 768px) {
   :root {
     --gutter: 40px;
-    --header-height: 96px;
   }
 }
 

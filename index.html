@@ -34,10 +34,26 @@
   <main>
     <section class="hero">
       <div class="hero__mosaic">
-        <img src="assets/images/city-break.png" alt="Parigi, Torre Eiffel" class="hero__tile hero__tile--4-3">
-        <img src="assets/images/safari.png" alt="Safari al tramonto" class="hero__tile hero__tile--1-1">
-        <img src="assets/images/adventure.png" alt="Avventura nel deserto" class="hero__tile hero__tile--16-9-a">
-        <img src="assets/images/asia.png" alt="Templi in Asia" class="hero__tile hero__tile--16-9-b">
+        <button type="button" class="hero__tile hero__tile--4-3" data-cluster="City Break">
+          <img src="assets/images/city-break.png" alt="Parigi, Torre Eiffel" class="hero__tile-img">
+          <span class="hero__tile-overlay"></span>
+          <span class="hero__tile-title">City Break</span>
+        </button>
+        <button type="button" class="hero__tile hero__tile--1-1" data-cluster="Safari">
+          <img src="assets/images/safari.png" alt="Safari al tramonto" class="hero__tile-img">
+          <span class="hero__tile-overlay"></span>
+          <span class="hero__tile-title">Safari</span>
+        </button>
+        <button type="button" class="hero__tile hero__tile--16-9-a" data-cluster="Adventure">
+          <img src="assets/images/adventure.png" alt="Avventura nel deserto" class="hero__tile-img">
+          <span class="hero__tile-overlay"></span>
+          <span class="hero__tile-title">Adventure</span>
+        </button>
+        <button type="button" class="hero__tile hero__tile--16-9-b" data-cluster="Asia">
+          <img src="assets/images/asia.png" alt="Templi in Asia" class="hero__tile-img">
+          <span class="hero__tile-overlay"></span>
+          <span class="hero__tile-title">Asia</span>
+        </button>
       </div>
     </section>
 
@@ -163,6 +179,17 @@
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  <div class="wizard-modal" id="wizard-modal" hidden>
+    <div class="wizard-modal__backdrop" data-wizard-close></div>
+    <div class="wizard-modal__panel" role="dialog" aria-modal="true" aria-labelledby="wizard-modal-title">
+      <button type="button" class="wizard-modal__close" data-wizard-close aria-label="Chiudi">&times;</button>
+      <p class="wizard-modal__eyebrow">Ricerca guidata</p>
+      <h2 id="wizard-modal-title" class="wizard-modal__title"></h2>
+      <p class="wizard-modal__body">Il wizard di ricerca per questo cluster arriva a breve.</p>
+      <button type="button" class="wizard-modal__cta" disabled>Continua</button>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
