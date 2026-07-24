@@ -1,0 +1,47 @@
+:root {
+  /* Colori — da Figma "UI - New Version v2.00.01" */
+  --color-text: #212427;      /* Foundation/Blackish/Base-B300 */
+  --color-text-muted: #47494c; /* Foundation/Blackish/B200 */
+  --color-white: #ffffff;
+  --color-grey-50: #e7e7e7;
+  --color-divider: #b0b0b0;
+  --color-primary: #1b6fcf;   /* blu logo — placeholder, sostituire col colore brand esatto */
+
+  /* Font — Schibsted Grotesk (Google Fonts) */
+  --font-heading: "Schibsted Grotesk", sans-serif;
+  --font-body: "Schibsted Grotesk", sans-serif;
+
+  /* Scala tipografica */
+  --fs-h1: 40px;
+  --lh-h1: 48px;
+  --fs-h3: 24px;
+  --lh-h3: 28.8px;
+  --fs-body: 16px;
+  --lh-body: 24px;
+  --fs-body-sm: 14px;
+  --lh-body-sm: 18px;
+  --fs-caption: 12px;
+  --lh-caption: 16px;
+
+  /* Spaziature / layout */
+  --container-max: 1440px;
+  --gutter: 24px;
+  --header-height: 80px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 40px;
+    --header-height: 96px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    /* 136px = padding usata da Figma per header/footer a 1440px.
+       Non deve crescere oltre: i contenitori con max-width:1440px sono
+       già centrati (margin:0 auto), un gutter maggiore li stringerebbe
+       inutilmente su schermi larghi. */
+    --gutter: 136px;
+  }
+}
