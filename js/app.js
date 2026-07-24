@@ -7,47 +7,117 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.getElementById("mobile-menu");
 
+  const menuBackground = menu?.querySelector(".mobile-menu__background");
+  const menuItems = () => menu.querySelectorAll(".mobile-menu__list li");
+  const iconTop = toggle?.querySelector(".nav-toggle__bar--top");
+  const iconMid = toggle?.querySelector(".nav-toggle__bar--mid");
+  const iconBottom = toggle?.querySelector(".nav-toggle__bar--bottom");
+
   if (toggle && menu) {
-    let menuBusy = false;
+    let menuToggleGeneration = 0;
+    let menuIsOpen = false;
+
+    const menuOrigin = () => {
+      const rect = toggle.getBoundingClientRect();
+      return {
+        x: Math.round(rect.left + rect.width / 2),
+        y: Math.round(rect.top + rect.height / 2),
+        maxRadius: Math.ceil(Math.hypot(window.innerWidth, window.innerHeight)),
+      };
+    };
+
+    const morphIcon = (open) => {
+      const opts = prefersReducedMotion ? { duration: 0 } : { duration: 0.3, easing: EASE };
+      animate(iconTop, { rotate: open ? 45 : 0, y: open ? 7 : 0 }, opts);
+      animate(iconMid, { opacity: open ? 0 : 1 }, opts);
+      animate(iconBottom, { rotate: open ? -45 : 0, y: open ? -7 : 0 }, opts);
+    };
 
     const openMenu = () => {
+      menuIsOpen = true;
+      const generation = ++menuToggleGeneration;
+      const { x, y, maxRadius } = menuOrigin();
       menu.hidden = false;
       toggle.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+      morphIcon(true);
       if (prefersReducedMotion) return Promise.resolve();
-      const container = animate(menu, { opacity: [0, 1] }, { duration: 0.2 });
-      const items = animate(
-        menu.querySelectorAll("li"),
-        { opacity: [0, 1], x: [-16, 0] },
-        { duration: 0.35, delay: stagger(0.06), easing: EASE }
+      const bg = animate(
+        menuBackground,
+        { clipPath: [`circle(30px at ${x}px ${y}px)`, `circle(${maxRadius}px at ${x}px ${y}px)`] },
+        { type: "spring", stiffness: 20, restDelta: 2 }
       );
-      return Promise.all([container.finished, items.finished]);
+      const items = animate(
+        menuItems(),
+        { opacity: [0, 1], y: [50, 0] },
+        { delay: stagger(0.07, { startDelay: 0.2 }), y: { type: "spring", stiffness: 1000, velocity: -100 } }
+      );
+      return Promise.all([bg.finished, items.finished]).catch(() => {});
     };
 
     const closeMenu = () => {
+      menuIsOpen = false;
+      const generation = ++menuToggleGeneration;
+      const { x, y, maxRadius } = menuOrigin();
       toggle.setAttribute("aria-expanded", "false");
+      morphIcon(false);
+      document.body.style.overflow = "";
       if (prefersReducedMotion) {
         menu.hidden = true;
         return Promise.resolve();
       }
       const items = animate(
-        menu.querySelectorAll("li"),
-        { opacity: [1, 0], x: [0, -16] },
-        { duration: 0.2, delay: stagger(0.03) }
+        menuItems(),
+        { opacity: [1, 0], y: [0, 50] },
+        { delay: stagger(0.05, { from: "last" }), y: { type: "spring", stiffness: 1000 } }
       );
-      const container = animate(menu, { opacity: [1, 0] }, { duration: 0.25 });
-      return Promise.all([items.finished, container.finished]).then(() => {
-        menu.hidden = true;
+      const bg = animate(
+        menuBackground,
+        { clipPath: [`circle(${maxRadius}px at ${x}px ${y}px)`, `circle(30px at ${x}px ${y}px)`] },
+        { delay: 0.2, type: "spring", stiffness: 400, damping: 40 }
+      );
+      return Promise.all([items.finished, bg.finished]).then(() => {
+        // Ignore a stale close if the menu was reopened in the meantime.
+        if (generation === menuToggleGeneration) menu.hidden = true;
       });
     };
 
     toggle.addEventListener("click", () => {
-      if (menuBusy) return;
-      menuBusy = true;
-      const isOpen = !menu.hidden;
-      (isOpen ? closeMenu() : openMenu()).finally(() => {
-        menuBusy = false;
-      });
+      menuIsOpen ? closeMenu() : openMenu();
     });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menuIsOpen) closeMenu();
+    });
+  }
+
+  const header = document.querySelector(".site-header");
+  if (header) {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      const headerHeight = header.offsetHeight;
+      if (currentY <= headerHeight || currentY < lastScrollY) {
+        header.classList.remove("site-header--hidden");
+      } else if (currentY > lastScrollY) {
+        header.classList.add("site-header--hidden");
+      }
+      lastScrollY = currentY;
+      ticking = false;
+    };
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(onScroll);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
   }
 
   const heroTiles = document.querySelectorAll(".hero__tile");

@@ -2,19 +2,34 @@ body {
   font-family: var(--font-body);
   color: var(--color-text);
   background: var(--color-white);
+  padding-top: var(--header-height);
 }
 
 /* ===== Header ===== */
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 95;
+  height: var(--header-height);
+  background: var(--color-white);
+  transition: transform 0.3s ease;
+}
+
+.site-header--hidden {
+  transform: translateY(-100%);
+}
+
+.site-header__inner {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--header-height);
+  height: 100%;
   padding: 0 var(--gutter);
   max-width: var(--container-max);
   margin: 0 auto;
-  background: var(--color-white);
 }
 
 .nav-toggle {
@@ -30,14 +45,10 @@ body {
 .nav-toggle__icon {
   position: relative;
   width: 24px;
-  height: 2px;
-  border-radius: 1px;
-  background: var(--color-text);
+  height: 16px;
 }
 
-.nav-toggle__icon::before,
-.nav-toggle__icon::after {
-  content: "";
+.nav-toggle__bar {
   position: absolute;
   left: 0;
   width: 100%;
@@ -46,8 +57,9 @@ body {
   background: var(--color-text);
 }
 
-.nav-toggle__icon::before { top: -8px; }
-.nav-toggle__icon::after { top: 8px; }
+.nav-toggle__bar--top { top: 0; }
+.nav-toggle__bar--mid { top: 7px; }
+.nav-toggle__bar--bottom { top: 14px; }
 
 .nav-toggle__label {
   font-size: var(--fs-body);
@@ -70,20 +82,30 @@ body {
 }
 
 .mobile-menu {
-  border-top: 1px solid var(--color-divider);
-  background: var(--color-white);
-  padding: 16px var(--gutter);
-  max-width: var(--container-max);
-  margin: 0 auto;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
 }
 
-.mobile-menu ul {
+.mobile-menu__background {
+  position: absolute;
+  inset: 0;
+  background: var(--color-white);
+  clip-path: circle(30px at 40px 40px);
+}
+
+.mobile-menu__list {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: calc(var(--header-height) + 24px) var(--gutter) 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.mobile-menu a {
+.mobile-menu__list a {
   font-size: var(--fs-body);
   font-weight: 500;
 }
@@ -406,8 +428,8 @@ body {
   /* Oltre 1440px il contenitore (max-width:1440px, centrato) fa già da
      inset rispetto al bordo del viewport: il padding laterale diventa
      ridondante e va azzerato, il contenuto arriva a filo del contenitore. */
-  .site-header,
-  .mobile-menu,
+  .site-header__inner,
+  .mobile-menu__list,
   .inspiration,
   .footer-bar {
     padding-left: 0;

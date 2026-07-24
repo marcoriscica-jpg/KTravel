@@ -14,17 +14,24 @@
 </head>
 <body>
   <header class="site-header">
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="nav-toggle__icon"></span>
-      <span class="nav-toggle__label">Menu</span>
-    </button>
-    <a href="index.html" class="logo">
-      <img src="assets/images/logo.png" srcset="assets/images/logo.png 1x, assets/images/logo@2x.png 2x" alt="Kira Viaggi" class="logo__mark">
-    </a>
+    <div class="site-header__inner">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="nav-toggle__icon">
+          <span class="nav-toggle__bar nav-toggle__bar--top"></span>
+          <span class="nav-toggle__bar nav-toggle__bar--mid"></span>
+          <span class="nav-toggle__bar nav-toggle__bar--bottom"></span>
+        </span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.png" srcset="assets/images/logo.png 1x, assets/images/logo@2x.png 2x" alt="Kira Viaggi" class="logo__mark">
+      </a>
+    </div>
   </header>
 
-  <nav id="mobile-menu" class="mobile-menu" hidden>
-    <ul>
+  <nav id="mobile-menu" class="mobile-menu" hidden aria-label="Menu principale">
+    <div class="mobile-menu__background"></div>
+    <ul class="mobile-menu__list">
       <li><a href="pages/destinazioni.html">Destinazioni</a></li>
       <li><a href="pages/chi-siamo.html">Chi siamo</a></li>
       <li><a href="pages/contatti.html">Contatti</a></li>
