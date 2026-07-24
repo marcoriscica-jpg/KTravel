@@ -1,0 +1,14 @@
+/* interactions.css — micro-transizioni hover, valori identici a quelli
+   misurati su bokun.io */
+
+.btn {
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+.nav-link {
+  transition: 0.3s ease-in-out;
+}

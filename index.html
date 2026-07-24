@@ -11,6 +11,12 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/animated-rings.css">
+  <link rel="stylesheet" href="css/interactions.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
   <header class="site-header">
@@ -66,8 +72,8 @@
 
     <section class="inspiration">
       <div class="inspiration__intro">
-        <h1>Hai bisogno di ispirazione?</h1>
-        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit</p>
+        <h1 class="reveal">Hai bisogno di ispirazione?</h1>
+        <p class="reveal">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit</p>
       </div>
 
       <div class="cards">
@@ -103,7 +109,7 @@
 
       <div class="footer-columns">
         <div class="footer-col">
-          <h4>Link Utili</h4>
+          <h4 class="reveal">Link Utili</h4>
           <ul>
             <li><a href="pages/chi-siamo.html">Chi Siamo</a></li>
             <li><a href="pages/contatti.html">Contatti</a></li>
@@ -115,7 +121,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Policies</h4>
+          <h4 class="reveal">Policies</h4>
           <ul>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Cookie Policy</a></li>
@@ -124,7 +130,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Help</h4>
+          <h4 class="reveal">Help</h4>
           <ul>
             <li><a href="#">Assistenza Clienti</a></li>
             <li><a href="#">Accessibilità</a></li>
@@ -134,7 +140,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Esplora</h4>
+          <h4 class="reveal">Esplora</h4>
           <ul>
             <li><a href="pages/destinazioni.html">Destinazioni</a></li>
             <li><a href="#">Itinerari &amp; Durate</a></li>
@@ -152,23 +158,23 @@
 
       <div class="footer-legal">
         <div class="footer-legal__company">
-          <h4>Ragione sociale e sede legale:</h4>
-          <p>Kira Viaggi S.R.L.</p>
-          <p>Via dei Sette Metri 5, 00118, Roma (RM)</p>
-          <p>P.IVA: 12555051007</p>
+          <h4 class="reveal">Ragione sociale e sede legale:</h4>
+          <p class="reveal">Kira Viaggi S.R.L.</p>
+          <p class="reveal">Via dei Sette Metri 5, 00118, Roma (RM)</p>
+          <p class="reveal">P.IVA: 12555051007</p>
           <img src="assets/images/badge-fondo-vacanze-felici.png" alt="Fondo Vacanze Felici" class="footer-legal__badge">
         </div>
 
         <div class="footer-legal__meta">
           <div class="footer-social">
-            <h4>Social</h4>
+            <h4 class="reveal">Social</h4>
             <div class="footer-social__icons">
               <a href="#" aria-label="Facebook"><img src="assets/icons/facebook-square.svg" alt=""></a>
               <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt=""></a>
             </div>
           </div>
           <div class="footer-payments">
-            <h4>Pagamenti sicuri</h4>
+            <h4 class="reveal">Pagamenti sicuri</h4>
             <div class="footer-payments__icons">
               <span class="pay-badge pay-badge--viva">Viva Wallet</span>
               <img src="assets/icons/visa.svg" alt="Visa">
@@ -182,8 +188,8 @@
 
     <div class="bottom-bar">
       <div class="bottom-bar__inner">
-        <p>Copyright &copy; 2026 KIRA VIAGGI S.R.L. - P.IVA 12555051007</p>
-        <p>Proudly powered by <a href="https://www.offertetouroperator.com" target="_blank" rel="noopener">OTO</a></p>
+        <p class="reveal">Copyright &copy; 2026 KIRA VIAGGI S.R.L. - P.IVA 12555051007</p>
+        <p class="reveal">Proudly powered by <a href="https://www.offertetouroperator.com" target="_blank" rel="noopener">OTO</a></p>
       </div>
     </div>
   </footer>
@@ -192,13 +198,21 @@
     <div class="wizard-modal__backdrop" data-wizard-close></div>
     <div class="wizard-modal__panel" role="dialog" aria-modal="true" aria-labelledby="wizard-modal-title">
       <button type="button" class="wizard-modal__close" data-wizard-close aria-label="Chiudi">&times;</button>
-      <p class="wizard-modal__eyebrow">Ricerca guidata</p>
-      <h2 id="wizard-modal-title" class="wizard-modal__title"></h2>
-      <p class="wizard-modal__body">Il wizard di ricerca per questo cluster arriva a breve.</p>
+      <p class="wizard-modal__eyebrow reveal">Ricerca guidata</p>
+      <h2 id="wizard-modal-title" class="wizard-modal__title reveal"></h2>
+      <p class="wizard-modal__body reveal">Il wizard di ricerca per questo cluster arriva a breve.</p>
       <button type="button" class="wizard-modal__cta" disabled>Continua</button>
     </div>
   </div>
 
   <script type="module" src="js/app.js"></script>
+  <!-- 1. Librerie esterne PRIMA di tutto -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- 2. Poi i tuoi script, che usano quelle librerie -->
+  <script src="js/reveal.js"></script>
+  <script src="js/carousel.js"></script> 
 </body>
 </html>

@@ -1,0 +1,46 @@
+/* animated-rings.css
+   Due cerchi tratteggiati che ruotano in loop infinito, uno in un verso
+   e uno nell'altro — effetto osservato nella sezione hero di bokun.io. */
+
+.animate-svg svg #ring-a {
+  animation: dash 20s linear infinite;
+}
+
+.animate-svg svg #ring-b {
+  animation: dashReverse 20s linear infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -1000; /* deve essere >= perimetro del cerchio */
+  }
+}
+
+@keyframes dashReverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+/*
+  MARKUP DI ESEMPIO — copia e adatta cx/cy/r al tuo layout.
+  Il valore di stroke-dasharray e stroke-dashoffset in @keyframes
+  devono corrispondere circa alla circonferenza (2 * PI * r).
+
+  <div class="animate-svg">
+    <svg width="628" height="628" viewBox="0 0 628 628" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle id="ring-a" cx="314" cy="314" r="160"
+        stroke="var(--color-accent-1, #2ecc71)" stroke-width="2"
+        stroke-dasharray="10 14" fill="none" />
+      <circle id="ring-b" cx="314" cy="314" r="200"
+        stroke="var(--color-accent-2, #3498db)" stroke-width="2"
+        stroke-dasharray="10 14" fill="none" />
+    </svg>
+  </div>
+*/

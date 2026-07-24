@@ -1,0 +1,15 @@
+/* Stato iniziale degli elementi che verranno animati da reveal.js.
+   Necessario per evitare che il contenuto lampeggi visibile prima
+   che GSAP prenda il controllo (JS potrebbe caricarsi con un frame di ritardo). */
+
+.reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/* Fallback: se JS è disabilitato o fallisce, dopo 2s mostra comunque tutto
+   (via classe aggiunta manualmente lato server, oppure semplicemente
+   rimuovi questa regola se preferisci gestirlo solo via JS). */
+.no-js .reveal {
+  opacity: 1;
+}
