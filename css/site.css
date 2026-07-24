@@ -87,7 +87,11 @@ body {
 /* ===== Hero: bento grid 4:3 + 1:1 + due 16:9 ===== */
 .hero__mosaic {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* 9:8 e non 1fr 1fr: un quadrato (1:1) e due strisce 16:9 impilate
+     della stessa larghezza non hanno la stessa altezza totale a meno
+     che le colonne non stiano in questo rapporto — altrimenti i bordi
+     inferiori delle tile non si allineano. */
+  grid-template-columns: 9fr 8fr;
   gap: 0;
   overflow: hidden;
 }
