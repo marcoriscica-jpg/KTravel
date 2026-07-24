@@ -10,6 +10,7 @@ function initReveal() {
   elements.forEach((el) => {
     gsap.to(el, {
       opacity: 1,
+      y: 0,
       duration: 1,
       ease: "power2.out", // curva equivalente a quella osservata (1 - (1-t)^n)
       scrollTrigger: {
