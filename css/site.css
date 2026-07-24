@@ -153,7 +153,7 @@ body {
   .hero__mosaic {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    height: 460px;
+    height: max(50vh, 460px);
   }
 
   .hero__tile {
@@ -168,7 +168,7 @@ body {
 }
 
 @media (min-width: 1280px) {
-  .hero__mosaic { height: 506px; }
+  .hero__mosaic { height: max(50vh, 506px); }
 }
 
 /* ===== Sezione "Hai bisogno di ispirazione?" ===== */
@@ -375,6 +375,9 @@ body {
 .bottom-bar {
   background: var(--color-grey-50);
   padding: 24px var(--gutter);
+}
+
+.bottom-bar__inner {
   max-width: var(--container-max);
   margin: 0 auto;
   display: flex;
@@ -396,7 +399,29 @@ body {
   .footer-legal { flex-direction: row; justify-content: space-between; }
   .footer-legal__company { max-width: 302px; }
   .footer-legal__meta { flex-direction: row; gap: 64px; }
-  .bottom-bar { flex-direction: row; justify-content: space-between; }
+  .bottom-bar__inner { flex-direction: row; justify-content: space-between; }
+}
+
+@media (min-width: 1440px) {
+  /* Oltre 1440px il contenitore (max-width:1440px, centrato) fa già da
+     inset rispetto al bordo del viewport: il padding laterale diventa
+     ridondante e va azzerato, il contenuto arriva a filo del contenitore. */
+  .site-header,
+  .mobile-menu,
+  .inspiration,
+  .footer-bar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .bottom-bar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nav-toggle {
+    left: 0;
+  }
 }
 
 /* ===== Wizard modal (placeholder) ===== */

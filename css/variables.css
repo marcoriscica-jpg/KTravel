@@ -31,16 +31,9 @@
 
 @media (min-width: 768px) {
   :root {
-    --gutter: 40px;
-  }
-}
-
-@media (min-width: 1280px) {
-  :root {
-    /* 136px = padding usata da Figma per header/footer a 1440px.
-       Non deve crescere oltre: i contenitori con max-width:1440px sono
-       già centrati (margin:0 auto), un gutter maggiore li stringerebbe
+    /* Il gutter non deve crescere oltre: i contenitori con max-width:1440px
+       sono già centrati (margin:0 auto), un gutter maggiore li stringerebbe
        inutilmente su schermi larghi. */
-    --gutter: 136px;
+    --gutter: 40px;
   }
 }
