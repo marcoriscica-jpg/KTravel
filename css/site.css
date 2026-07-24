@@ -378,7 +378,6 @@ body {
 }
 
 .bottom-bar__inner {
-  max-width: var(--container-max);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
