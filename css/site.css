@@ -110,7 +110,42 @@ body {
   font-weight: 500;
 }
 
-/* ===== Hero: bento grid 4:3 + 1:1 + due 16:9 ===== */
+/* ===== Hero: eyebrow + titolo + bento grid 4:3 + 1:1 + due 16:9 ===== */
+.hero {
+  max-width: 1536px;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.hero__intro {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-kira-blue);
+}
+
+.hero__title {
+  margin-top: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+  color: var(--color-ink);
+}
+
+.hero__subtitle {
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  color: var(--color-ink);
+}
+
 .hero__mosaic {
   display: grid;
   /* 9:8 e non 1fr 1fr: un quadrato (1:1) e due strisce 16:9 impilate
@@ -120,6 +155,7 @@ body {
   grid-template-columns: 9fr 8fr;
   gap: 0;
   overflow: hidden;
+  border-radius: 16px;
 }
 
 .hero__tile {
@@ -145,22 +181,21 @@ body {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.2);
   pointer-events: none;
 }
 
 .hero__tile-title {
   position: absolute;
-  left: 20px;
-  bottom: 20px;
+  left: 24px;
+  bottom: 24px;
   z-index: 2;
   color: var(--color-white);
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: var(--fs-h3);
   line-height: var(--lh-h3);
-  opacity: 0;
-  transform: translateY(8px);
+  text-shadow: 0px 5px 13px rgba(255, 255, 255, 0.4);
   pointer-events: none;
 }
 
@@ -191,6 +226,515 @@ body {
 
 @media (min-width: 1280px) {
   .hero__mosaic { height: max(50vh, 506px); }
+}
+
+/* ===== Componente bottone condiviso (CTA riusate in più sezioni) ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  min-height: 44px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn__icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.25s ease;
+}
+
+.btn:hover .btn__icon,
+.btn:focus-visible .btn__icon {
+  transform: translateX(8px);
+}
+
+.btn--outline-red {
+  border: 1px solid #a4a5a6;
+  color: var(--color-red);
+}
+
+.btn--outline-white {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: var(--color-white);
+}
+
+.btn--red {
+  background: var(--color-red-strong);
+  color: var(--color-white);
+}
+
+.btn--primary {
+  background: var(--color-kira-blue);
+  color: var(--color-white);
+}
+
+/* ===== Sezione "Perchè viaggiare con Kira" (value props) ===== */
+.value-props {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 48px var(--gutter);
+}
+
+.value-props__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.value-props__top h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.4px;
+  color: var(--color-ink);
+}
+
+.value-props__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.value-props__item h3 {
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: var(--color-ink);
+}
+
+.value-props__item p {
+  margin-top: 8px;
+  color: var(--color-body-copy);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.value-props__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: var(--color-icon-bg-blue);
+}
+
+.value-props__icon img {
+  width: 32px;
+  height: 32px;
+}
+
+@media (min-width: 1024px) {
+  .value-props__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== Sezione "Promos" ===== */
+.promos {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 64px var(--gutter);
+}
+
+.promos > h2 {
+  max-width: 900px;
+  margin: 0 auto 32px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.4px;
+  text-align: center;
+  color: var(--color-ink);
+}
+
+.promos__row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+  min-height: 320px;
+  padding: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.promo__media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.promo:hover .promo__media,
+.promo:focus-visible .promo__media {
+  transform: scale(1.08);
+}
+
+.promo__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 0.5) 80%);
+}
+
+.promo__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--color-white);
+}
+
+.promo__tag {
+  font-size: 18px;
+  max-width: 220px;
+}
+
+.promo__price {
+  display: flex;
+  flex-direction: column;
+}
+
+.promo__place {
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+}
+
+.promo__discount {
+  font-weight: 600;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+}
+
+.promo__caption {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.promo .btn {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .promos__row {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .promo {
+    flex: 1;
+  }
+  .promo--lg {
+    flex: 1.7;
+  }
+}
+
+/* ===== Sezione "Abbiamo la fiducia dei migliori" (brand trust) ===== */
+.brands {
+  background: var(--color-grey-20);
+  padding: 64px var(--gutter);
+}
+
+.brands > h2 {
+  max-width: var(--container-max);
+  margin: 0 auto 32px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.4px;
+  text-align: center;
+  color: var(--color-ink);
+}
+
+.brands__row {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px 56px;
+}
+
+.brand-logo {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.brand-logo__frag {
+  position: absolute;
+  width: auto;
+  height: auto;
+}
+
+/* ===== Sezione "Destinations" (Top Destinations bento grid) ===== */
+.destinations {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 56px var(--gutter);
+}
+
+.destinations__head {
+  max-width: 700px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.destinations__head h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.4px;
+  color: var(--color-ink);
+}
+
+.destinations__swash {
+  margin: 16px auto;
+  display: block;
+}
+
+.destinations__head p {
+  color: var(--color-body-copy);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.destinations__row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.destinations__hero,
+.destinations__tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 200px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.destinations__tile {
+  /* basis 200px + grow: assorbe lo spazio extra quando la colonna viene
+     stretchata dalla griglia (desktop, 3 colonne sulla stessa riga) —
+     senza grow la colonna dei bottoni CTA resta più corta delle altre. */
+  flex: 1 1 200px;
+}
+
+.destinations__hero {
+  min-height: 320px;
+  padding: 40px;
+}
+
+.destinations__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.5) 75%);
+}
+
+.destinations__hero-body,
+.destinations__tile-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--color-white);
+}
+
+.destinations__hero-title {
+  font-size: 32px;
+  max-width: 480px;
+}
+
+.destinations__hero-promo {
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+.destinations__hero-caption,
+.destinations__tile-caption {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.destinations__tile-title {
+  font-weight: 500;
+  font-size: 18px;
+  max-width: 178px;
+}
+
+.destinations__tile-price {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.destinations__bento {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.destinations__col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.destinations__tile--tall {
+  flex: 0 0 280px;
+  min-height: 280px;
+}
+
+.destinations__cta {
+  flex: 0 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .destinations__row {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .destinations__hero {
+    flex: 1.2;
+  }
+  .destinations__bento {
+    flex: 2;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== Sezione "Utilities" (contatti rapidi) ===== */
+.utilities {
+  background: var(--color-grey-20);
+  padding: 64px var(--gutter);
+}
+
+.utilities__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.utilities__inner h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  /* scala in modo fluido tra i due estremi invece di un salto netto al
+     breakpoint 1024px: evita che l'altezza della riga cambi di scatto
+     e disallinei le card dei contatti. */
+  font-size: clamp(28px, 22px + 1.6vw, 48px);
+  line-height: 1.2;
+  color: var(--color-ink);
+}
+
+.utilities__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .utilities__cards {
+    /* 3 colonne sulla stessa riga: la griglia stretcha automaticamente
+       tutte le card alla stessa altezza, indipendentemente dalla
+       lunghezza del testo di ciascuna. */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.utilities__card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  border-radius: 24px;
+  background: var(--color-white);
+  box-shadow: 4px 4px 22px 0 rgba(72, 99, 111, 0.25);
+  /* email/telefono sono stringhe senza spazi: senza questo il browser
+     allarga la colonna della grid per non troncarle, causando overflow
+     orizzontale della pagina sui viewport medi. */
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.utilities__card strong {
+  color: var(--color-ink);
+  font-size: 18px;
+}
+
+.utilities__value {
+  color: var(--color-kira-blue);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.utilities__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 999px;
+  background: var(--color-icon-bg-violet);
+}
+
+.utilities__icon img {
+  width: 48px;
+  height: 48px;
+}
+
+@media (min-width: 1024px) {
+  .utilities__inner {
+    flex-direction: row;
+    align-items: center;
+  }
+  .utilities__inner h2 {
+    /* basis fissa: senza, il testo e le card competono per lo spazio in
+       base al min-content e il titolo finisce per essere schiacciato
+       su una sola parola a riga. */
+    flex: 0 0 340px;
+    max-width: 340px;
+  }
+  .utilities__cards {
+    flex: 1;
+    min-width: 0;
+  }
 }
 
 /* ===== Sezione "Hai bisogno di ispirazione?" ===== */
@@ -283,6 +827,216 @@ body {
   .card--citybreak { grid-column: 2; grid-row: 1 / 3; min-height: unset; }
   .card--adventure { grid-column: 3; grid-row: 1; }
   .card--asia      { grid-column: 3; grid-row: 2; }
+}
+
+/* ===== Sezione "Reviews" (recensioni Google) ===== */
+.reviews {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 40px var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.reviews__summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  max-width: 340px;
+}
+
+.reviews__summary h2 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--color-ink);
+}
+
+.reviews__rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reviews__score {
+  font-weight: 700;
+  color: var(--color-rating-orange);
+}
+
+.reviews__stars {
+  color: var(--color-rating-orange);
+  letter-spacing: 2px;
+}
+
+.reviews__count {
+  color: var(--color-text-muted);
+}
+
+.reviews__google-badge {
+  position: relative;
+  display: block;
+  width: 174px;
+  height: 32px;
+  overflow: hidden;
+}
+
+.reviews__google-badge img {
+  position: absolute;
+  top: -706.52%;
+  left: -64.01%;
+  width: 747.62%;
+  height: 1113.04%;
+  max-width: none;
+}
+
+.reviews__carousel {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--color-card-grey);
+}
+
+.review-card__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-card__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: var(--color-avatar-blue);
+  color: var(--color-white);
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.review-card__who {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.review-card__who strong {
+  color: var(--color-ink);
+}
+
+.review-card__who span {
+  color: var(--color-text-muted);
+  font-size: var(--fs-body-sm);
+}
+
+.review-card__stars {
+  color: var(--color-rating-orange);
+  letter-spacing: 2px;
+}
+
+.review-card p {
+  color: var(--color-text-muted);
+}
+
+.reviews__nav {
+  position: absolute;
+  top: 50%;
+  /* la libreria Swiper imposta z-index:1 su .swiper — senza un valore
+     esplicito più alto qui, le slide finiscono sopra le freccette
+     anche se sono dopo nel DOM. */
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 2px solid #b6b6b6;
+  background: var(--color-white);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.reviews__nav--prev { left: -8px; }
+.reviews__nav--next { right: -8px; }
+
+@media (min-width: 768px) {
+  .reviews {
+    flex-direction: row;
+    align-items: center;
+  }
+  .reviews {
+    /* più respiro tra il blocco punteggio e il carousel rispetto al
+       layout impilato su mobile, dove gap:32px basta */
+    gap: 64px;
+  }
+  .reviews__summary {
+    flex-shrink: 0;
+  }
+  .reviews__carousel {
+    /* senza flex:1 il carosello si dimensiona sul contenuto delle slide
+       invece che sullo spazio disponibile nella riga, e le slide non
+       si adattano correttamente al resize del viewport. */
+    flex: 1;
+  }
+  .reviews__nav--prev { left: -24px; }
+  .reviews__nav--next { right: -24px; }
+}
+
+/* ===== Sezione "Dt / CMB" (banner newsletter) ===== */
+.newsletter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px var(--gutter);
+  background-size: cover;
+  background-position: center;
+  background-color: #1a1a1a;
+}
+
+.newsletter__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+.newsletter__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 1056px;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.newsletter__title {
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+.newsletter__text {
+  font-size: var(--fs-body);
+  line-height: 27px;
 }
 
 /* ===== Footer ===== */
@@ -385,15 +1139,6 @@ body {
   height: 16px;
 }
 
-.pay-badge {
-  font-size: var(--fs-caption);
-  font-weight: 600;
-  color: var(--color-text-muted);
-  border: 1px solid var(--color-divider);
-  border-radius: 4px;
-  padding: 3px 8px;
-}
-
 .bottom-bar {
   background: var(--color-grey-50);
   padding: 24px var(--gutter);
@@ -446,7 +1191,7 @@ body {
   }
 }
 
-/* ===== Wizard modal (placeholder) ===== */
+/* ===== Wizard modal "Ricerca guidata" ===== */
 .wizard-modal[hidden] {
   display: none;
 }
@@ -471,52 +1216,734 @@ body {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 420px;
+  max-width: 1176px;
+  max-height: 85vh;
   background: var(--color-white);
   border-radius: 16px;
-  padding: 32px;
+  overflow: hidden;
 }
 
 .wizard-modal__close {
   position: absolute;
   top: 16px;
   right: 16px;
+  z-index: 2;
   font-size: 20px;
   line-height: 1;
   color: var(--color-text-muted);
 }
 
-.wizard-modal__eyebrow {
+.wizard {
+  display: flex;
+  height: 85vh;
+  max-height: 630px;
+}
+
+.wizard__sidebar {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  background: var(--color-grey-20);
+  overflow-y: auto;
+}
+
+.wizard__intro h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-wizard-ink);
+}
+
+.wizard__intro p {
+  margin-top: 4px;
   font-size: var(--fs-caption);
   line-height: var(--lh-caption);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-grey-300);
 }
 
-.wizard-modal__title {
+.wizard__progress {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-grey-50);
+  overflow: hidden;
+}
+
+.wizard__progress-bar {
+  display: block;
+  height: 100%;
+  width: 25%;
+  background: var(--color-kira-blue);
+  transition: width 0.3s ease;
+}
+
+.wizard__stepper {
+  display: flex;
+  flex-direction: column;
+}
+
+.wizard__step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  cursor: default;
+}
+
+.wizard__step-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--color-grey-200);
+  background: var(--color-white);
   font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: var(--fs-h3);
-  line-height: var(--lh-h3);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--color-grey-300);
+}
+
+.wizard__step-label {
+  font-size: 12px;
+  color: var(--color-grey-300);
+}
+
+.wizard__step::before {
+  content: "";
+  position: absolute;
+  left: 11.5px;
+  /* la linea copre solo il gap sopra il cerchio (10px) più il gap
+     sotto il cerchio precedente (10px): se coprisse tutta l'altezza
+     dell'item (100%) finirebbe per attraversare visivamente il
+     cerchio stesso invece di fermarsi al suo bordo. */
+  top: -20px;
+  width: 1px;
+  height: 20px;
+  background: var(--color-grey-200);
+}
+
+.wizard__step:first-child::before {
+  display: none;
+}
+
+.wizard__step.is-active .wizard__step-index {
+  border-color: var(--color-kira-blue);
+  background: var(--color-kira-blue);
+  color: var(--color-white);
+}
+
+.wizard__step.is-active .wizard__step-label {
+  font-weight: 700;
+  color: var(--color-wizard-ink);
+}
+
+.wizard__step.is-done {
+  cursor: pointer;
+}
+
+.wizard__step.is-done .wizard__step-index {
+  border-color: var(--color-kira-blue);
+  color: var(--color-kira-blue);
+}
+
+.wizard__summary {
+  position: relative;
+  margin-top: auto;
+  background: var(--color-white);
+  border-radius: 6px;
+  padding: 8px 8px 8px 16px;
+  overflow: hidden;
+}
+
+.wizard__summary-accent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 6px;
+  background: var(--color-wizard-accent);
+}
+
+.wizard__summary h3 {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-body-copy);
+}
+
+.wizard__summary-path {
   margin-top: 8px;
+  padding: 6px;
+  border-bottom: 1px solid var(--color-grey-50);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.wizard-modal__body {
-  margin-top: 12px;
-  color: var(--color-text-muted);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+.wizard__summary-category:empty,
+.wizard__summary-destination:empty {
+  display: none;
 }
 
-.wizard-modal__cta {
-  margin-top: 24px;
+.wizard__summary-category {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-wizard-ink);
+}
+
+.wizard__summary-destination {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-wizard-ink);
+}
+
+.wizard__summary-list {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wizard__summary-item {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--color-grey-200);
+}
+
+.wizard__summary-item.is-filled {
+  color: var(--color-grey-400);
+}
+
+.wizard__summary-item img {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transform: translateY(2px);
+}
+
+.wizard__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 32px 32px;
+  overflow-y: auto;
+}
+
+.wizard__back {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-grey-300);
+}
+
+.wizard__back[hidden] {
+  /* [hidden] dell'user agent stylesheet ha la stessa specificità della
+     regola sopra: senza questa, "display:flex" vince e il bottone
+     resta visibile anche con l'attributo hidden impostato via JS. */
+  display: none;
+}
+
+.wizard__back img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.wizard-step__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-wizard-ink);
+}
+
+.wizard-step__subtitle {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--color-black-300);
+}
+
+.wizard-search {
+  position: relative;
+  margin-top: 16px;
+}
+
+.wizard-search img {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.wizard-search input {
   width: 100%;
-  padding: 12px;
+  height: 48px;
+  padding: 8px 12px 8px 40px;
+  border: 1px solid var(--color-grey-100);
+  border-radius: 4px;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.wizard-search input::placeholder {
+  color: var(--color-grey-200);
+}
+
+.wizard-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.wizard-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 135px;
+  padding: 16px;
   border-radius: 8px;
-  background: var(--color-primary);
+  border: 2px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+}
+
+.wizard-card__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.wizard-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.wizard-card__label {
+  position: relative;
+  z-index: 2;
   color: var(--color-white);
   font-weight: 700;
-  opacity: 0.5;
+  font-size: 16px;
+}
+
+.wizard-card__check {
+  position: absolute;
+  z-index: 2;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+}
+
+.wizard-card.is-selected {
+  border-color: var(--color-red-strong);
+}
+
+.wizard-list__empty {
+  margin-top: 16px;
+  padding: 16px;
+  font-size: 14px;
+  color: var(--color-grey-300);
+}
+
+/* ===== Step 2: aeroporto / porto di partenza ===== */
+.wizard-transport {
+  margin-top: 16px;
+  display: flex;
+  gap: 24px;
+  min-height: 0;
+  flex: 1;
+}
+
+.wizard-transport__tabs {
+  flex: 0 0 225px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-right: 1px solid var(--color-grey-50);
+  padding-right: 24px;
+}
+
+.wizard-transport__tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: var(--color-white);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-grey-300);
+}
+
+.wizard-transport__tab img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  /* le icone bed/ship non sono quadrate: senza object-fit, forzare
+     width e height a 24px le deforma (stretch non uniforme). */
+  object-fit: contain;
+}
+
+.wizard-transport__tab.is-active {
+  background: var(--color-kira-blue);
+  border-color: var(--color-kira-blue);
+  color: var(--color-white);
+}
+
+.wizard-transport__groups {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.wizard-transport__groups--single {
+  padding-right: 0;
+}
+
+.wizard-transport__group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wizard-transport__group-title {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--color-grey-400);
+}
+
+.wizard-airport {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 48px;
+  padding: 8px;
+  border: 1px solid var(--color-kira-primary-100);
+  border-radius: 4px;
+  text-align: left;
+  background: var(--color-white);
+}
+
+.wizard-airport:hover {
+  background: var(--color-grey-20);
+}
+
+.wizard-airport img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.wizard-airport__name {
+  font-size: 14px;
+  color: var(--color-slate);
+}
+
+.wizard-airport__code {
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .wizard-transport {
+    flex-direction: column;
+  }
+  .wizard-transport__tabs {
+    /* pila verticale a piena larghezza, stessa forma del desktop:
+       il wrap orizzontale precedente spezzava le etichette lunghe
+       ("Traghetto e Soggiorno") su più righe in modo disordinato. */
+    flex: 0 0 auto;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-grey-50);
+    padding-right: 0;
+    padding-bottom: 16px;
+  }
+}
+
+.wizard-calendar {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wizard-calendar__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wizard-calendar__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid var(--color-grey-100);
+  color: var(--color-wizard-ink);
+  font-size: 16px;
+}
+
+.wizard-calendar__months {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 640px) {
+  .wizard-calendar__months {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wizard-calendar__month-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-wizard-ink);
+  text-transform: capitalize;
+}
+
+.wizard-calendar__weekdays,
+.wizard-calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.wizard-calendar__weekdays {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--color-grey-300);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.wizard-calendar__day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.wizard-calendar__day:disabled {
+  color: var(--color-grey-100);
+  cursor: not-allowed;
+}
+
+.wizard-calendar__day--today {
+  border: 1px solid var(--color-kira-blue);
+}
+
+.wizard-calendar__day--selected {
+  background: var(--color-kira-blue);
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.wizard-months-grid {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wizard-months-grid__year {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-wizard-ink);
+  margin-bottom: 16px;
+}
+
+.wizard-months-grid__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 16px;
+}
+
+.wizard-month-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 8px;
+  border: 1px solid var(--color-grey-100);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.wizard-month-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.wizard-month-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.wizard-month-btn.is-selected {
+  border-color: var(--color-kira-blue);
+  background: var(--color-kira-blue);
+  color: var(--color-white);
+}
+
+.wizard-guests {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 420px;
+}
+
+.wizard-guests__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-grey-50);
+}
+
+.wizard-guests__row strong {
+  display: block;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.wizard-guests__row span.wizard-guests__hint {
+  font-size: 12px;
+  color: var(--color-grey-300);
+}
+
+.wizard-counter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.wizard-counter__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid var(--color-kira-blue);
+  color: var(--color-kira-blue);
+  font-size: 18px;
+}
+
+.wizard-counter__btn:disabled {
+  border-color: var(--color-grey-100);
+  color: var(--color-grey-100);
+  cursor: not-allowed;
+}
+
+.wizard-counter__value {
+  min-width: 16px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.wizard-child-ages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* stessa larghezza massima di .wizard-guests: senza, le righe età
+     si allargano a tutta la larghezza del contenuto e finiscono molto
+     più a destra dei contatori Adulti/Bambini appena sopra. */
+  max-width: 420px;
+}
+
+.wizard-child-ages__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.wizard-child-ages__row label {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.wizard-child-ages__row select {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--color-grey-100);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.wizard-search-cta {
+  margin-top: 32px;
+  align-self: flex-start;
+  min-width: 160px;
+}
+
+.wizard-done {
+  max-width: 480px;
+}
+
+.wizard-done ul {
+  margin: 16px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+  .wizard {
+    flex-direction: column;
+    height: 90vh;
+  }
+  .wizard__sidebar {
+    flex: 0 0 auto;
+  }
+  .wizard-modal__panel {
+    max-height: 90vh;
+  }
 }

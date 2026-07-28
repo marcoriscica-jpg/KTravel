@@ -133,37 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const setTileActive = (tile, active) => {
     const img = tile.querySelector(".hero__tile-img");
     const overlay = tile.querySelector(".hero__tile-overlay");
-    const title = tile.querySelector(".hero__tile-title");
     const opts = prefersReducedMotion ? { duration: 0 } : { duration: 0.5, easing: EASE };
 
     animate(img, { scale: active ? 1.08 : 1 }, opts);
-    animate(overlay, { backgroundColor: active ? "rgba(0, 0, 0, 0.28)" : "rgba(0, 0, 0, 0)" }, opts);
-    animate(title, { opacity: active ? 1 : 0, y: active ? 0 : 8 }, opts);
-  };
-
-  const modal = document.getElementById("wizard-modal");
-  const modalTitle = document.getElementById("wizard-modal-title");
-  const modalPanel = modal?.querySelector(".wizard-modal__panel");
-  const modalBackdrop = modal?.querySelector(".wizard-modal__backdrop");
-  const modalCloseBtn = modal?.querySelector(".wizard-modal__close");
-  let lastFocusedTile = null;
-
-  const openWizardModal = (cluster, trigger) => {
-    if (!modal) return;
-    lastFocusedTile = trigger;
-    modalTitle.textContent = cluster;
-    modal.hidden = false;
-    if (!prefersReducedMotion) {
-      animate(modalBackdrop, { opacity: [0, 1] }, { duration: 0.25 });
-      animate(modalPanel, { opacity: [0, 1], scale: [0.95, 1] }, { duration: 0.3, easing: EASE });
-    }
-    modalCloseBtn?.focus();
-  };
-
-  const closeWizardModal = () => {
-    if (!modal || modal.hidden) return;
-    modal.hidden = true;
-    lastFocusedTile?.focus();
+    animate(overlay, { backgroundColor: active ? "rgba(0, 0, 0, 0.35)" : "rgba(0, 0, 0, 0.2)" }, opts);
   };
 
   heroTiles.forEach((tile) => {
@@ -171,15 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
     tile.addEventListener("pointerleave", () => setTileActive(tile, false));
     tile.addEventListener("focus", () => setTileActive(tile, true));
     tile.addEventListener("blur", () => setTileActive(tile, false));
-    tile.addEventListener("click", () => openWizardModal(tile.dataset.cluster, tile));
-  });
-
-  modal?.addEventListener("click", (e) => {
-    if (e.target.closest("[data-wizard-close]")) closeWizardModal();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeWizardModal();
+    tile.addEventListener("click", () => {
+      document.dispatchEvent(new CustomEvent("wizard:open", { detail: { cluster: tile.dataset.cluster, trigger: tile } }));
+    });
   });
 
   const form = document.querySelector(".contact-form");

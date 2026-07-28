@@ -46,27 +46,310 @@
 
   <main>
     <section class="hero">
+      <div class="hero__intro">
+        <p class="hero__eyebrow reveal">Prenota la tua vacanza</p>
+        <h1 class="hero__title reveal">Scegli tra le oltre 150 destinazioni</h1>
+        <p class="hero__subtitle reveal">Dove vuoi andare?</p>
+      </div>
       <div class="hero__mosaic">
-        <button type="button" class="hero__tile hero__tile--4-3" data-cluster="City Break">
-          <img src="assets/images/city-break.png" alt="Parigi, Torre Eiffel" class="hero__tile-img">
+        <button type="button" class="hero__tile hero__tile--4-3" data-cluster="Mare Estero">
+          <img src="assets/images/mare-estero.png" alt="Spiaggia caraibica con palme" class="hero__tile-img">
           <span class="hero__tile-overlay"></span>
-          <span class="hero__tile-title">City Break</span>
+          <span class="hero__tile-title">Mare Estero</span>
         </button>
-        <button type="button" class="hero__tile hero__tile--1-1" data-cluster="Safari">
-          <img src="assets/images/safari.png" alt="Safari al tramonto" class="hero__tile-img">
+        <button type="button" class="hero__tile hero__tile--1-1" data-cluster="Crociere">
+          <img src="assets/images/crociere.png" alt="Nave da crociera al tramonto" class="hero__tile-img">
           <span class="hero__tile-overlay"></span>
-          <span class="hero__tile-title">Safari</span>
+          <span class="hero__tile-title">Crociere</span>
         </button>
-        <button type="button" class="hero__tile hero__tile--16-9-a" data-cluster="Adventure">
-          <img src="assets/images/adventure.png" alt="Avventura nel deserto" class="hero__tile-img">
+        <button type="button" class="hero__tile hero__tile--16-9-a" data-cluster="Mare Italia">
+          <img src="assets/images/mare-italia.png" alt="Manarola, Cinque Terre" class="hero__tile-img">
           <span class="hero__tile-overlay"></span>
-          <span class="hero__tile-title">Adventure</span>
+          <span class="hero__tile-title">Mare Italia</span>
         </button>
-        <button type="button" class="hero__tile hero__tile--16-9-b" data-cluster="Asia">
-          <img src="assets/images/asia.png" alt="Templi in Asia" class="hero__tile-img">
+        <button type="button" class="hero__tile hero__tile--16-9-b" data-cluster="Tour">
+          <img src="assets/images/tour.png" alt="Mappa e taccuino da viaggio" class="hero__tile-img">
           <span class="hero__tile-overlay"></span>
-          <span class="hero__tile-title">Asia</span>
+          <span class="hero__tile-title">Tour</span>
         </button>
+      </div>
+    </section>
+
+    <section class="value-props">
+      <div class="value-props__top reveal">
+        <h2>Perchè viaggiare con Kira</h2>
+        <a href="pages/chi-siamo.html" class="btn btn--outline-red">
+          Scopri Kira Viaggi
+          <img src="assets/icons/arrow-right.svg" alt="" class="btn__icon">
+        </a>
+      </div>
+      <div class="value-props__grid reveal">
+        <div class="value-props__item">
+          <span class="value-props__icon"><img src="assets/icons/icon-support.svg" alt=""></span>
+          <h3>Supporto 24/7</h3>
+          <p>Una selezione di agenzie che conoscono la loro destinazione meglio di chiunque altro.</p>
+        </div>
+        <div class="value-props__item">
+          <span class="value-props__icon"><img src="assets/icons/icon-custom.svg" alt=""></span>
+          <h3>100% su misura</h3>
+          <p>Un viaggio completamente personalizzabile: soste, alloggi, attività...</p>
+        </div>
+        <div class="value-props__item">
+          <span class="value-props__icon"><img src="assets/icons/icon-fair-price.svg" alt=""></span>
+          <h3>Prezzi equi</h3>
+          <p>Per te e per tutte le persone che contribuiscono al successo del tuo viaggio.</p>
+        </div>
+        <div class="value-props__item">
+          <span class="value-props__icon"><img src="assets/icons/icon-guarantee.svg" alt=""></span>
+          <h3>Prezzi garantiti</h3>
+          <p>Kira Viaggi assicura il tuo viaggio, dalla preparazione fino al rientro.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="promos">
+      <h2 class="reveal">Non perdere queste offerte di pacchetti vacanza in tendenza</h2>
+      <div class="promos__row reveal">
+        <a href="pages/destinazioni.html" class="promo promo--lg">
+          <span class="promo__media" style="background-image:url(assets/images/promo-japan.png)"></span>
+          <span class="promo__overlay"></span>
+          <span class="promo__body">
+            <span class="promo__tag">Special offer number 1</span>
+            <span class="promo__price">
+              <strong class="promo__place">Japan</strong>
+              <span class="promo__discount">-50%*</span>
+              <small class="promo__caption">*This is the small bottom caption</small>
+            </span>
+          </span>
+          <span class="btn btn--outline-white">Scopri di più <img src="assets/icons/arrow-right.svg" alt="" class="btn__icon"></span>
+        </a>
+        <a href="pages/destinazioni.html" class="promo">
+          <span class="promo__media" style="background-image:url(assets/images/promo-kenya.png)"></span>
+          <span class="promo__overlay"></span>
+          <span class="promo__body">
+            <span class="promo__tag">Exclusive Holiday Deal Just for You!</span>
+            <span class="promo__price">
+              <strong class="promo__place">Kenya</strong>
+              <span class="promo__discount">-35%</span>
+              <small class="promo__caption">*This is the small bottom caption</small>
+            </span>
+          </span>
+          <span class="btn btn--outline-white">Scopri di più <img src="assets/icons/arrow-right.svg" alt="" class="btn__icon"></span>
+        </a>
+        <a href="pages/destinazioni.html" class="promo">
+          <span class="promo__media" style="background-image:url(assets/images/promo-caraibi.png)"></span>
+          <span class="promo__overlay"></span>
+          <span class="promo__body">
+            <span class="promo__tag">Exclusive New Year Deal Just for You!</span>
+            <span class="promo__price">
+              <strong class="promo__place">Caraibi</strong>
+              <span class="promo__discount">-25%</span>
+              <small class="promo__caption">*This is the small bottom caption</small>
+            </span>
+          </span>
+          <span class="btn btn--outline-white">Scopri di più <img src="assets/icons/arrow-right.svg" alt="" class="btn__icon"></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="brands">
+      <h2 class="reveal">Abbiamo la fiducia dei migliori</h2>
+      <div class="brands__row reveal">
+        <span class="brand-logo" style="aspect-ratio:213.322/33.462;max-width:213.322px" data-brand="eden">
+          <img src="assets/icons/brands/eden/Vector.svg" alt="" class="brand-logo__frag" style="top:1.34%;right:88.35%;bottom:22.96%;left:0%">
+          <img src="assets/icons/brands/eden/Group.svg" alt="" class="brand-logo__frag" style="top:17.74%;right:76.4%;bottom:22.79%;left:14.36%">
+          <img src="assets/icons/brands/eden/Group1.svg" alt="" class="brand-logo__frag" style="top:1.66%;right:66.79%;bottom:22.71%;left:23.9%">
+          <img src="assets/icons/brands/eden/Group2.svg" alt="" class="brand-logo__frag" style="top:17.74%;right:56.76%;bottom:22.79%;left:33.99%">
+          <img src="assets/icons/brands/eden/Group3.svg" alt="" class="brand-logo__frag" style="top:17.67%;right:47.84%;bottom:23.58%;left:43.77%">
+          <img src="assets/icons/brands/eden/Group4.svg" alt="" class="brand-logo__frag" style="top:19.32%;right:36.46%;bottom:22.87%;left:54.34%">
+          <img src="assets/icons/brands/eden/Group5.svg" alt="" class="brand-logo__frag" style="top:0%;right:33.82%;bottom:22.87%;left:63.76%">
+          <img src="assets/icons/brands/eden/Group6.svg" alt="" class="brand-logo__frag" style="top:18.37%;right:23.89%;bottom:22.08%;left:66.79%">
+          <img src="assets/icons/brands/eden/Group7.svg" alt="" class="brand-logo__frag" style="top:18.45%;right:13.8%;bottom:0%;left:76.9%">
+          <img src="assets/icons/brands/eden/Group8.svg" alt="" class="brand-logo__frag" style="top:18.45%;right:3.75%;bottom:0%;left:86.94%">
+          <img src="assets/icons/brands/eden/Group9.svg" alt="" class="brand-logo__frag" style="top:0%;right:0.41%;bottom:22.87%;left:97.16%">
+        </span>
+        <span class="brand-logo" style="aspect-ratio:89.071/63.171;max-width:89.071px" data-brand="costa">
+          <img src="assets/icons/brands/costa/logo.svg" alt="" class="brand-logo__frag" style="top:0%;right:0%;bottom:0%;left:0%">
+        </span>
+        <span class="brand-logo" style="aspect-ratio:222.824/33.357;max-width:222.824px" data-brand="francorosso">
+          <img src="assets/icons/brands/francorosso/Group10.svg" alt="" class="brand-logo__frag" style="top:-0.23%;right:85.1%;bottom:0.23%;left:-0.03%">
+          <img src="assets/icons/brands/francorosso/Group11.svg" alt="" class="brand-logo__frag" style="top:20.2%;right:14.8%;bottom:26.35%;left:77.4%">
+          <img src="assets/icons/brands/francorosso/Group12.svg" alt="" class="brand-logo__frag" style="top:20.2%;right:7.97%;bottom:26.37%;left:84.23%">
+          <img src="assets/icons/brands/francorosso/Group13.svg" alt="" class="brand-logo__frag" style="top:21.6%;right:46%;bottom:25.58%;left:47.44%">
+          <img src="assets/icons/brands/francorosso/Group14.svg" alt="" class="brand-logo__frag" style="top:21.61%;right:38.65%;bottom:24.2%;left:53.27%">
+          <img src="assets/icons/brands/francorosso/Group15.svg" alt="" class="brand-logo__frag" style="top:21.63%;right:21.85%;bottom:24.22%;left:70.07%">
+          <img src="assets/icons/brands/francorosso/Group16.svg" alt="" class="brand-logo__frag" style="top:21.86%;right:0.03%;bottom:24.17%;left:91.89%">
+          <img src="assets/icons/brands/francorosso/Group17.svg" alt="" class="brand-logo__frag" style="top:22.03%;right:59.16%;bottom:24.27%;left:31%">
+          <img src="assets/icons/brands/francorosso/Group18.svg" alt="" class="brand-logo__frag" style="top:21.99%;right:52.62%;bottom:26.28%;left:38.27%">
+          <img src="assets/icons/brands/francorosso/Group19.svg" alt="" class="brand-logo__frag" style="top:22.53%;right:30.09%;bottom:27.18%;left:60.48%">
+          <img src="assets/icons/brands/francorosso/Group20.svg" alt="" class="brand-logo__frag" style="top:23.43%;right:68.28%;bottom:25.73%;left:24.06%">
+          <img src="assets/icons/brands/francorosso/Group21.svg" alt="" class="brand-logo__frag" style="top:23.93%;right:73.57%;bottom:25.8%;left:18%">
+        </span>
+        <span class="brand-logo" style="aspect-ratio:166.679/40.703;max-width:166.679px" data-brand="bravo">
+          <img src="assets/icons/brands/bravo/Group22.svg" alt="" class="brand-logo__frag" style="top:-0.09%;right:75.93%;bottom:43.58%;left:4.15%">
+          <img src="assets/icons/brands/bravo/Group23.svg" alt="" class="brand-logo__frag" style="top:11.82%;right:0.02%;bottom:14.03%;left:81.81%">
+          <img src="assets/icons/brands/bravo/Group24.svg" alt="" class="brand-logo__frag" style="top:11.93%;right:29.18%;bottom:14.93%;left:55.18%">
+          <img src="assets/icons/brands/bravo/Group25.svg" alt="" class="brand-logo__frag" style="top:12.1%;right:70.22%;bottom:67.52%;left:27.62%">
+          <img src="assets/icons/brands/bravo/Group26.svg" alt="" class="brand-logo__frag" style="top:12.29%;right:59.63%;bottom:15.12%;left:27.62%">
+          <img src="assets/icons/brands/bravo/Group27.svg" alt="" class="brand-logo__frag" style="top:12.39%;right:45.68%;bottom:14.95%;left:42.05%">
+          <img src="assets/icons/brands/bravo/Group28.svg" alt="" class="brand-logo__frag" style="top:12.64%;right:55.83%;bottom:67.17%;left:42.01%">
+          <img src="assets/icons/brands/bravo/Group29.svg" alt="" class="brand-logo__frag" style="top:12.81%;right:17.43%;bottom:14.25%;left:66.98%">
+          <img src="assets/icons/brands/bravo/Group30.svg" alt="" class="brand-logo__frag" style="top:43.79%;right:80.03%;bottom:0.09%;left:-0.02%">
+        </span>
+        <span class="brand-logo" style="aspect-ratio:268.483/32.212;max-width:268.483px" data-brand="turisanda">
+          <img src="assets/icons/brands/turisanda/Group31.svg" alt="" class="brand-logo__frag" style="top:0.21%;right:58.48%;bottom:4.72%;left:31.11%">
+          <img src="assets/icons/brands/turisanda/Group32.svg" alt="" class="brand-logo__frag" style="top:0.21%;right:50.35%;bottom:4.7%;left:39.09%">
+          <img src="assets/icons/brands/turisanda/Group33.svg" alt="" class="brand-logo__frag" style="top:0.21%;right:18.62%;bottom:4.7%;left:70.87%">
+          <img src="assets/icons/brands/turisanda/Group34.svg" alt="" class="brand-logo__frag" style="top:1.03%;right:39.84%;bottom:0.21%;left:50.49%">
+          <img src="assets/icons/brands/turisanda/Group35.svg" alt="" class="brand-logo__frag" style="top:5.17%;right:92.44%;bottom:4.75%;left:0.02%">
+          <img src="assets/icons/brands/turisanda/Group36.svg" alt="" class="brand-logo__frag" style="top:5.17%;right:83.12%;bottom:2.29%;left:9%">
+          <img src="assets/icons/brands/turisanda/Group37.svg" alt="" class="brand-logo__frag" style="top:5.14%;right:73.7%;bottom:4.74%;left:18.47%">
+          <img src="assets/icons/brands/turisanda/Group38.svg" alt="" class="brand-logo__frag" style="top:5.17%;right:70.38%;bottom:4.75%;left:27.79%">
+          <img src="assets/icons/brands/turisanda/Group39.svg" alt="" class="brand-logo__frag" style="top:5.14%;right:28.86%;bottom:4.72%;left:62.1%">
+          <img src="assets/icons/brands/turisanda/Group40.svg" alt="" class="brand-logo__frag" style="top:50.21%;right:14.5%;bottom:5.16%;left:83.37%">
+          <img src="assets/icons/brands/turisanda/Group41.svg" alt="" class="brand-logo__frag" style="top:50.11%;right:9.41%;bottom:5.16%;left:86.72%">
+          <img src="assets/icons/brands/turisanda/Group42.svg" alt="" class="brand-logo__frag" style="top:49.85%;right:4.83%;bottom:5.14%;left:91.1%">
+          <img src="assets/icons/brands/turisanda/Group43.svg" alt="" class="brand-logo__frag" style="top:51.01%;right:0.03%;bottom:5.16%;left:95.61%">
+        </span>
+        <span class="brand-logo" style="aspect-ratio:223.145/45.171;max-width:223.145px" data-brand="alpitour">
+          <img src="assets/icons/brands/alpitour/Group44.svg" alt="" class="brand-logo__frag" style="top:0%;right:28.07%;bottom:48.54%;left:27.89%">
+          <img src="assets/icons/brands/alpitour/Group45.svg" alt="" class="brand-logo__frag" style="top:67.77%;right:58.61%;bottom:0%;left:34.54%">
+          <img src="assets/icons/brands/alpitour/Group46.svg" alt="" class="brand-logo__frag" style="top:67.78%;right:22.36%;bottom:0%;left:70.97%">
+          <img src="assets/icons/brands/alpitour/Group47.svg" alt="" class="brand-logo__frag" style="top:68.6%;right:93%;bottom:0.39%;left:0%">
+          <img src="assets/icons/brands/alpitour/Group48.svg" alt="" class="brand-logo__frag" style="top:68.64%;right:86.26%;bottom:0.42%;left:9.05%">
+          <img src="assets/icons/brands/alpitour/Group49.svg" alt="" class="brand-logo__frag" style="top:68.58%;right:78.77%;bottom:0.43%;left:15.83%">
+          <img src="assets/icons/brands/alpitour/Group50.svg" alt="" class="brand-logo__frag" style="top:68.64%;right:75.12%;bottom:0.43%;left:23.4%">
+          <img src="assets/icons/brands/alpitour/Group51.svg" alt="" class="brand-logo__frag" style="top:68.61%;right:66.87%;bottom:0.43%;left:26.89%">
+          <img src="assets/icons/brands/alpitour/Group52.svg" alt="" class="brand-logo__frag" style="top:68.64%;right:50.08%;bottom:0.18%;left:43.48%">
+          <img src="assets/icons/brands/alpitour/Group53.svg" alt="" class="brand-logo__frag" style="top:68.61%;right:42.43%;bottom:0.4%;left:51.91%">
+          <img src="assets/icons/brands/alpitour/Group54.svg" alt="" class="brand-logo__frag" style="top:68.59%;right:30.26%;bottom:0.44%;left:59.31%">
+          <img src="assets/icons/brands/alpitour/Group55.svg" alt="" class="brand-logo__frag" style="top:68.61%;right:14.78%;bottom:0.38%;left:79.82%">
+          <img src="assets/icons/brands/alpitour/Group56.svg" alt="" class="brand-logo__frag" style="top:68.64%;right:7.82%;bottom:0.42%;left:87.65%">
+          <img src="assets/icons/brands/alpitour/Group57.svg" alt="" class="brand-logo__frag" style="top:68.61%;right:0%;bottom:0.46%;left:93.91%">
+        </span>
+        <span class="brand-logo" style="aspect-ratio:125.628/45.171;max-width:125.628px" data-brand="msc">
+          <img src="assets/icons/brands/frame2/Frame2.svg" alt="" class="brand-logo__frag" style="top:0%;right:0%;bottom:0%;left:0%">
+        </span>
+        <span class="brand-logo" style="aspect-ratio:138.254/45.171;max-width:138.254px" data-brand="veratour">
+          <img src="assets/icons/brands/g14/G14.svg" alt="" class="brand-logo__frag" style="top:0%;right:0%;bottom:0%;left:0%">
+        </span>
+      </div>
+    </section>
+
+    <section class="destinations">
+      <div class="destinations__head reveal">
+        <h2>Top Destinations</h2>
+        <img src="assets/icons/divider-swash.svg" alt="" class="destinations__swash">
+        <p>Draft star select group arrange. Mask share rotate component component. Hand undo scrolling share union ellipse ipsum italic main auto. Pencil bold arrow duplicate rectangle.</p>
+      </div>
+      <div class="destinations__row reveal">
+        <a href="pages/destinazioni.html" class="destinations__hero" style="background-image:url(assets/images/dest-hero.png)">
+          <span class="destinations__overlay"></span>
+          <span class="destinations__hero-body">
+            <span class="destinations__hero-title">Exclusive Holiday Deal Just for You!</span>
+            <strong class="destinations__hero-promo">PROMO SUMMER 27!</strong>
+            <small class="destinations__hero-caption">*This is the small bottom caption</small>
+          </span>
+        </a>
+        <div class="destinations__bento">
+          <div class="destinations__col">
+            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b1.png)">
+              <span class="destinations__overlay"></span>
+              <span class="destinations__tile-body">
+                <span class="destinations__tile-title">Muted 4-blocker supervisor</span>
+                <strong class="destinations__tile-price">-33%*</strong>
+                <small class="destinations__tile-caption">*This is the small bottom caption</small>
+              </span>
+            </a>
+            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b2.png)">
+              <span class="destinations__overlay"></span>
+              <span class="destinations__tile-body">
+                <span class="destinations__tile-title">Awareness office people</span>
+                <strong class="destinations__tile-price">-33%*</strong>
+                <small class="destinations__tile-caption">*This is the small bottom caption</small>
+              </span>
+            </a>
+            <a href="pages/destinazioni.html" class="destinations__tile destinations__tile--tall" style="background-image:url(assets/images/dest-b3.png)">
+              <span class="destinations__overlay"></span>
+              <span class="destinations__tile-body">
+                <span class="destinations__tile-title">Ensure optimal solutions</span>
+                <strong class="destinations__tile-price">-33%*</strong>
+                <small class="destinations__tile-caption">*This is the small bottom caption</small>
+              </span>
+            </a>
+          </div>
+          <div class="destinations__col">
+            <a href="pages/destinazioni.html" class="destinations__tile destinations__tile--tall" style="background-image:url(assets/images/dest-b4.png)">
+              <span class="destinations__overlay"></span>
+              <span class="destinations__tile-body">
+                <span class="destinations__tile-title">View teams believe</span>
+                <strong class="destinations__tile-price">9.999 €</strong>
+                <small class="destinations__tile-caption">*This is the small bottom caption</small>
+              </span>
+            </a>
+            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b5.png)">
+              <span class="destinations__overlay"></span>
+              <span class="destinations__tile-body">
+                <span class="destinations__tile-title">Enable manager usabiltiy</span>
+                <strong class="destinations__tile-price">-25%</strong>
+                <small class="destinations__tile-caption">*This is the small bottom caption</small>
+              </span>
+            </a>
+            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b6.png)">
+              <span class="destinations__overlay"></span>
+              <span class="destinations__tile-body">
+                <span class="destinations__tile-title">Book follow break</span>
+                <strong class="destinations__tile-price">-15%</strong>
+                <small class="destinations__tile-caption">*This is the small bottom caption</small>
+              </span>
+            </a>
+          </div>
+          <div class="destinations__col">
+            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b7.png)">
+              <span class="destinations__overlay"></span>
+              <span class="destinations__tile-body">
+                <span class="destinations__tile-title">Left pulling regroup</span>
+                <strong class="destinations__tile-price">9.999 €</strong>
+                <small class="destinations__tile-caption">*This is the small bottom caption</small>
+              </span>
+            </a>
+            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b8.png)">
+              <span class="destinations__overlay"></span>
+              <span class="destinations__tile-body">
+                <span class="destinations__tile-title">Loss these work</span>
+                <strong class="destinations__tile-price">-35%</strong>
+                <small class="destinations__tile-caption">*This is the small bottom caption</small>
+              </span>
+            </a>
+            <a href="pages/destinazioni.html" class="btn btn--red destinations__cta">
+              Scopri di più
+              <img src="assets/icons/arrow-right.svg" alt="" class="btn__icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="utilities">
+      <div class="utilities__inner reveal">
+        <h2>Siamo qui per assisterti 24h su 24</h2>
+        <div class="utilities__cards">
+          <a href="mailto:aziende@kiraviaggi.it" class="utilities__card">
+            <span class="utilities__icon"><img src="assets/icons/icon-email.svg" alt=""></span>
+            <strong>Email</strong>
+            <span class="utilities__value">aziende@kiraviaggi.it</span>
+          </a>
+          <a href="tel:+390679890222" class="utilities__card">
+            <span class="utilities__icon"><img src="assets/icons/icon-phone.svg" alt=""></span>
+            <strong>Telefono</strong>
+            <span class="utilities__value">+39 06 79 89 0222</span>
+          </a>
+          <a href="https://wa.me/390679890222" target="_blank" rel="noopener" class="utilities__card">
+            <span class="utilities__icon"><img src="assets/icons/icon-whatsapp.svg" alt=""></span>
+            <strong>Whatsapp</strong>
+            <span class="utilities__value">aziende@kiraviaggi.it</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -127,6 +410,85 @@
         <a class="card card--asia reveal" href="pages/destinazioni.html">
           <img src="assets/images/asia.png" alt="Asia">
           <span class="card__label">Cluster 5</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="reviews__summary reveal">
+        <h2>Kira Viaggi S.R.L.</h2>
+        <div class="reviews__rating">
+          <span class="reviews__score">4.9</span>
+          <span class="reviews__stars" aria-hidden="true">★★★★★</span>
+        </div>
+        <p class="reviews__count">Basato su 9.999 recenzioni</p>
+        <span class="reviews__google-badge" role="img" aria-label="Recensioni verificate Google">
+          <img src="assets/images/google-reviews-badge.png" alt="">
+        </span>
+      </div>
+
+      <div class="reviews__carousel reveal">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <article class="swiper-slide review-card">
+              <div class="review-card__top">
+                <span class="review-card__avatar">A</span>
+                <div class="review-card__who">
+                  <strong>Mario Rossi</strong>
+                  <span>2 mesi fa</span>
+                </div>
+              </div>
+              <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+              <p>Gentilezza, disponibilità e cordialità che fanno la differenza. Grazie!</p>
+            </article>
+            <article class="swiper-slide review-card">
+              <div class="review-card__top">
+                <span class="review-card__avatar">A</span>
+                <div class="review-card__who">
+                  <strong>Mario Rossi</strong>
+                  <span>2 mesi fa</span>
+                </div>
+              </div>
+              <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+              <p>Panel deploy get ladder support. Savvy ground submit meaningful asserts able.</p>
+            </article>
+            <article class="swiper-slide review-card">
+              <div class="review-card__top">
+                <span class="review-card__avatar">A</span>
+                <div class="review-card__who">
+                  <strong>Mario Rossi</strong>
+                  <span>2 mesi fa</span>
+                </div>
+              </div>
+              <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+              <p>Stakeholder panel skulls email door prioritize. Give get bells finance world red-flag design.</p>
+            </article>
+            <article class="swiper-slide review-card">
+              <div class="review-card__top">
+                <span class="review-card__avatar">A</span>
+                <div class="review-card__who">
+                  <strong>Mario Rossi</strong>
+                  <span>2 mesi fa</span>
+                </div>
+              </div>
+              <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+              <p>Stakeholder panel skulls email door prioritize. Give get bells finance world red-flag design.</p>
+            </article>
+          </div>
+        </div>
+        <button type="button" class="reviews__nav reviews__nav--prev" aria-label="Recensione precedente">‹</button>
+        <button type="button" class="reviews__nav reviews__nav--next" aria-label="Recensione successiva">›</button>
+      </div>
+    </section>
+
+    <section class="newsletter" style="background-image:url(assets/images/newsletter-bg.png)">
+      <span class="newsletter__overlay"></span>
+      <div class="newsletter__body reveal">
+        <p class="newsletter__title">Iscriviti alla Newsletter</p>
+        <p class="newsletter__text">Rimani sempre aggiornato con le migliori offerte.</p>
+        <a href="#" class="btn btn--primary">
+          Iscriviti qui
+          <img src="assets/icons/arrow-right.svg" alt="" class="btn__icon">
         </a>
       </div>
     </section>
@@ -208,7 +570,7 @@
           <div class="footer-payments">
             <h4>Pagamenti sicuri</h4>
             <div class="footer-payments__icons">
-              <span class="pay-badge pay-badge--viva">Viva Wallet</span>
+              <img src="assets/icons/scalapay.svg" alt="Scalapay">
               <img src="assets/icons/visa.svg" alt="Visa">
               <img src="assets/icons/amex.svg" alt="Amex">
               <img src="assets/icons/mastercard.svg" alt="Mastercard">
@@ -228,12 +590,31 @@
 
   <div class="wizard-modal" id="wizard-modal" hidden>
     <div class="wizard-modal__backdrop" data-wizard-close></div>
-    <div class="wizard-modal__panel" role="dialog" aria-modal="true" aria-labelledby="wizard-modal-title">
+    <div class="wizard-modal__panel" role="dialog" aria-modal="true" aria-labelledby="wizard-step-title">
       <button type="button" class="wizard-modal__close" data-wizard-close aria-label="Chiudi">&times;</button>
-      <p class="wizard-modal__eyebrow reveal">Ricerca guidata</p>
-      <h2 id="wizard-modal-title" class="wizard-modal__title reveal"></h2>
-      <p class="wizard-modal__body reveal">Il wizard di ricerca per questo cluster arriva a breve.</p>
-      <button type="button" class="wizard-modal__cta" disabled>Continua</button>
+      <div class="wizard">
+        <aside class="wizard__sidebar">
+          <div class="wizard__intro">
+            <h2>Prenota la tua vacanza</h2>
+            <p>Segui le istruzioni per trovare la vacanza perfetta per te</p>
+          </div>
+          <div class="wizard__progress" aria-hidden="true"><span class="wizard__progress-bar"></span></div>
+          <ol class="wizard__stepper"></ol>
+          <div class="wizard__summary">
+            <span class="wizard__summary-accent" aria-hidden="true"></span>
+            <h3>Hai selezionato</h3>
+            <div class="wizard__summary-path">
+              <p class="wizard__summary-category"></p>
+              <p class="wizard__summary-destination"></p>
+            </div>
+            <ul class="wizard__summary-list"></ul>
+          </div>
+        </aside>
+        <div class="wizard__content">
+          <button type="button" class="wizard__back" data-wizard-back hidden>&larr; Indietro</button>
+          <div class="wizard__panel"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -246,5 +627,6 @@
   <!-- 2. Poi i tuoi script, che usano quelle librerie -->
   <script src="js/reveal.js" defer></script>
   <script src="js/carousel.js" defer></script>
+  <script type="module" src="js/wizard.js"></script>
 </body>
 </html>

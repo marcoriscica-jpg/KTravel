@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icons/Engine Kit/Filled/calendar">
+<g id="Vector">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.375 2.8H3.325C2.45515 2.8 1.75 3.50515 1.75 4.375V10.675C1.75 11.5448 2.45515 12.25 3.325 12.25H10.675C11.5448 12.25 12.25 11.5448 12.25 10.675V4.375C12.25 3.50515 11.5448 2.8 10.675 2.8H9.625V4.375C9.625 4.66495 9.38995 4.9 9.1 4.9C8.81005 4.9 8.575 4.66495 8.575 4.375V2.8H5.425V4.375C5.425 4.66495 5.18995 4.9 4.9 4.9C4.61005 4.9 4.375 4.66495 4.375 4.375V2.8ZM2.8 7V10.675C2.8 10.9649 3.03505 11.2 3.325 11.2H10.675C10.9649 11.2 11.2 10.9649 11.2 10.675V7H2.8Z" fill="var(--fill-0, #1D7FC0)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.9 1.75C5.18995 1.75 5.425 1.98505 5.425 2.275V2.8H4.375V2.275C4.375 1.98505 4.61005 1.75 4.9 1.75Z" fill="var(--fill-0, #1D7FC0)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.1 1.75C9.38995 1.75 9.625 1.98505 9.625 2.275V2.8H8.575V2.275C8.575 1.98505 8.81005 1.75 9.1 1.75Z" fill="var(--fill-0, #1D7FC0)"/>
+</g>
+</g>
+</svg>

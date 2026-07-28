@@ -8,6 +8,29 @@
   --color-divider: #b0b0b0;
   --color-primary: #1b6fcf;   /* blu logo — placeholder, sostituire col colore brand esatto */
 
+  /* Colori aggiunti da Figma per le sezioni homepage sotto la hero */
+  --color-ink: #010101;          /* Foundation/Black/black-500 — titoli H2/H3 */
+  --color-body-copy: #343434;    /* Foundation/Black/black-400 — paragrafi Roboto */
+  --color-kira-blue: #1d7fc0;    /* eyebrow hero, link Utilities */
+  --color-red: #d42525;          /* Foundation/sys-Red/sys-red-500 — CTA outline */
+  --color-red-strong: #d1495b;   /* Marketplace2/Red-MKT/red-500 — CTA piena */
+  --color-icon-bg-blue: #ecf6fc;
+  --color-icon-bg-violet: #efeef7;
+  --color-avatar-blue: #329ae0;
+  --color-card-grey: #f4f4f4;
+  --color-rating-orange: #fb8e28;
+
+  /* Colori aggiunti da Figma per il wizard "Ricerca guidata" */
+  --color-wizard-ink: #1c4c6c;   /* Kira/Kira Primary-700 — titoli e testo selezionato nel wizard */
+  --color-black-300: #555555;
+  --color-grey-100: #b6b6b6;
+  --color-grey-200: #929292;
+  --color-grey-300: #616161;
+  --color-grey-400: #424242;
+  --color-wizard-accent: #ffc952; /* barra laterale box "Hai selezionato" */
+  --color-kira-primary-100: #c5dceb; /* bordo righe aeroporto/porto */
+  --color-slate: #545f71;            /* testo righe aeroporto/porto */
+
   /* Font — Schibsted Grotesk (Google Fonts) */
   --font-heading: "Schibsted Grotesk", sans-serif;
   --font-body: "Schibsted Grotesk", sans-serif;
