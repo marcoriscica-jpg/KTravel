@@ -29,11 +29,24 @@
   --color-grey-400: #424242;
   --color-wizard-accent: #ffc952; /* barra laterale box "Hai selezionato" */
   --color-kira-primary-100: #c5dceb; /* bordo righe aeroporto/porto */
+  --color-kira-primary-50: #edf3f7;  /* bg riga porto/mese selezionato, sfondo lista destinazioni attiva */
+  --color-kira-primary-800: #173447; /* testo riga porto/mese selezionato */
   --color-slate: #545f71;            /* testo righe aeroporto/porto */
+  --color-card-border: #d3d3d3;      /* bordo box "Hai selezionato" */
+  --color-black-50: #e6e6e6;         /* celle fuori mese nel calendario */
+  --color-wizard-today: #0078bd;     /* anello "oggi" nel calendario */
+  --color-grey-counter-border: #9ba5b7; /* bordo bottoni +/- contatore ospiti */
+  --color-grey-250: #8a8a8a;         /* etichette muted nel box "Hai selezionato" */
+  --color-wizard-progress-light: #6db7e9; /* inizio gradiente barra di avanzamento mobile */
 
-  /* Font — Schibsted Grotesk (Google Fonts) */
+  /* Font — da Figma: Schibsted Grotesk è riservato all'H1 hero e ai bottoni
+     (entrambi confermati "Display"/"Button" nel design), Poppins è il font
+     di base per tutto il resto del testo (titoli di sezione, paragrafi,
+     card, wizard). Bricolage Grotesque resta solo per i numeri del wizard. */
   --font-heading: "Schibsted Grotesk", sans-serif;
-  --font-body: "Schibsted Grotesk", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --font-wizard: "Poppins", sans-serif;
+  --font-wizard-numeric: "Bricolage Grotesque", sans-serif;
 
   /* Scala tipografica */
   --fs-h1: 40px;

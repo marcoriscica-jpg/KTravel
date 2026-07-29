@@ -133,10 +133,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const setTileActive = (tile, active) => {
     const img = tile.querySelector(".hero__tile-img");
     const overlay = tile.querySelector(".hero__tile-overlay");
+    const text = tile.querySelector(".hero__tile-text");
     const opts = prefersReducedMotion ? { duration: 0 } : { duration: 0.5, easing: EASE };
 
     animate(img, { scale: active ? 1.08 : 1 }, opts);
     animate(overlay, { backgroundColor: active ? "rgba(0, 0, 0, 0.35)" : "rgba(0, 0, 0, 0.2)" }, opts);
+    // maxHeight/marginTop (non solo opacity) fanno risalire il titolo
+    // sopra quando il sottotitolo si espande, vedi commento in site.css.
+    animate(text, { opacity: active ? 1 : 0, maxHeight: active ? 80 : 0, marginTop: active ? 8 : 0 }, opts);
   };
 
   heroTiles.forEach((tile) => {
@@ -146,6 +150,14 @@ document.addEventListener("DOMContentLoaded", () => {
     tile.addEventListener("blur", () => setTileActive(tile, false));
     tile.addEventListener("click", () => {
       document.dispatchEvent(new CustomEvent("wizard:open", { detail: { cluster: tile.dataset.cluster, trigger: tile } }));
+    });
+  });
+
+  const engineTabs = document.querySelectorAll(".classic-search__tab");
+  engineTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      engineTabs.forEach((t) => t.classList.remove("is-active"));
+      tab.classList.add("is-active");
     });
   });
 

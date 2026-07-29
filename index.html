@@ -7,7 +7,7 @@
   <title>Kira Viaggi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Bricolage+Grotesque:wght@400;700&family=Lato:wght@700&family=Merriweather+Sans:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/site.css">
@@ -52,25 +52,41 @@
         <p class="hero__subtitle reveal">Dove vuoi andare?</p>
       </div>
       <div class="hero__mosaic">
-        <button type="button" class="hero__tile hero__tile--4-3" data-cluster="Mare Estero">
+        <button type="button" class="hero__tile hero__tile--4-3 reveal" data-cluster="Mare Estero">
           <img src="assets/images/mare-estero.png" alt="Spiaggia caraibica con palme" class="hero__tile-img">
+          <span class="hero__tile-shade"></span>
           <span class="hero__tile-overlay"></span>
-          <span class="hero__tile-title">Mare Estero</span>
+          <span class="hero__tile-body">
+            <span class="hero__tile-title">Mare Estero</span>
+            <span class="hero__tile-text">Le più belle mete di Mare Estero con pacchetti All Inclusive tutto incluso.</span>
+          </span>
         </button>
-        <button type="button" class="hero__tile hero__tile--1-1" data-cluster="Crociere">
+        <button type="button" class="hero__tile hero__tile--1-1 reveal" data-cluster="Crociere">
           <img src="assets/images/crociere.png" alt="Nave da crociera al tramonto" class="hero__tile-img">
+          <span class="hero__tile-shade"></span>
           <span class="hero__tile-overlay"></span>
-          <span class="hero__tile-title">Crociere</span>
+          <span class="hero__tile-body">
+            <span class="hero__tile-title">Crociere</span>
+            <span class="hero__tile-text">Le migliori offerte di Crociere di Costa e MSC.</span>
+          </span>
         </button>
-        <button type="button" class="hero__tile hero__tile--16-9-a" data-cluster="Mare Italia">
+        <button type="button" class="hero__tile hero__tile--16-9-a reveal" data-cluster="Mare Italia">
           <img src="assets/images/mare-italia.png" alt="Manarola, Cinque Terre" class="hero__tile-img">
+          <span class="hero__tile-shade hero__tile-shade--short"></span>
           <span class="hero__tile-overlay"></span>
-          <span class="hero__tile-title">Mare Italia</span>
+          <span class="hero__tile-body">
+            <span class="hero__tile-title">Mare Italia</span>
+            <span class="hero__tile-text">Le più belle mete italiane con possibilità di Solo Soggiorno, Pacchetti Nave e Volo incluso.</span>
+          </span>
         </button>
-        <button type="button" class="hero__tile hero__tile--16-9-b" data-cluster="Tour">
+        <button type="button" class="hero__tile hero__tile--16-9-b reveal" data-cluster="Tour">
           <img src="assets/images/tour.png" alt="Mappa e taccuino da viaggio" class="hero__tile-img">
+          <span class="hero__tile-shade hero__tile-shade--short"></span>
           <span class="hero__tile-overlay"></span>
-          <span class="hero__tile-title">Tour</span>
+          <span class="hero__tile-body">
+            <span class="hero__tile-title">Tour</span>
+            <span class="hero__tile-text">I migliori itinerari per scoprire le più belle mete del mondo con Tour Organizzati con guida in italiano senza sentirti mai solo.</span>
+          </span>
         </button>
       </div>
     </section>
@@ -243,17 +259,19 @@
         <p>Draft star select group arrange. Mask share rotate component component. Hand undo scrolling share union ellipse ipsum italic main auto. Pencil bold arrow duplicate rectangle.</p>
       </div>
       <div class="destinations__row reveal">
-        <a href="pages/destinazioni.html" class="destinations__hero" style="background-image:url(assets/images/dest-hero.png)">
+        <a href="pages/destinazioni.html" class="destinations__hero">
+          <span class="destinations__media" style="background-image:url(assets/images/dest-hero.png)"></span>
           <span class="destinations__overlay"></span>
           <span class="destinations__hero-body">
-            <span class="destinations__hero-title">Exclusive Holiday Deal Just for You!</span>
-            <strong class="destinations__hero-promo">PROMO SUMMER 27!</strong>
+            <span class="destinations__tile-title">Exclusive Holiday Deal Just for You!</span>
+            <strong class="destinations__hero-promo">PROMO SUMMER 2027!</strong>
             <small class="destinations__hero-caption">*This is the small bottom caption</small>
           </span>
         </a>
         <div class="destinations__bento">
           <div class="destinations__col">
-            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b1.png)">
+            <a href="pages/destinazioni.html" class="destinations__tile">
+              <span class="destinations__media" style="background-image:url(assets/images/dest-b1.png)"></span>
               <span class="destinations__overlay"></span>
               <span class="destinations__tile-body">
                 <span class="destinations__tile-title">Muted 4-blocker supervisor</span>
@@ -261,7 +279,8 @@
                 <small class="destinations__tile-caption">*This is the small bottom caption</small>
               </span>
             </a>
-            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b2.png)">
+            <a href="pages/destinazioni.html" class="destinations__tile">
+              <span class="destinations__media" style="background-image:url(assets/images/dest-b2.png)"></span>
               <span class="destinations__overlay"></span>
               <span class="destinations__tile-body">
                 <span class="destinations__tile-title">Awareness office people</span>
@@ -269,7 +288,8 @@
                 <small class="destinations__tile-caption">*This is the small bottom caption</small>
               </span>
             </a>
-            <a href="pages/destinazioni.html" class="destinations__tile destinations__tile--tall" style="background-image:url(assets/images/dest-b3.png)">
+            <a href="pages/destinazioni.html" class="destinations__tile destinations__tile--tall">
+              <span class="destinations__media" style="background-image:url(assets/images/dest-b3.png)"></span>
               <span class="destinations__overlay"></span>
               <span class="destinations__tile-body">
                 <span class="destinations__tile-title">Ensure optimal solutions</span>
@@ -279,7 +299,8 @@
             </a>
           </div>
           <div class="destinations__col">
-            <a href="pages/destinazioni.html" class="destinations__tile destinations__tile--tall" style="background-image:url(assets/images/dest-b4.png)">
+            <a href="pages/destinazioni.html" class="destinations__tile destinations__tile--tall">
+              <span class="destinations__media" style="background-image:url(assets/images/dest-b4.png)"></span>
               <span class="destinations__overlay"></span>
               <span class="destinations__tile-body">
                 <span class="destinations__tile-title">View teams believe</span>
@@ -287,7 +308,8 @@
                 <small class="destinations__tile-caption">*This is the small bottom caption</small>
               </span>
             </a>
-            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b5.png)">
+            <a href="pages/destinazioni.html" class="destinations__tile">
+              <span class="destinations__media" style="background-image:url(assets/images/dest-b5.png)"></span>
               <span class="destinations__overlay"></span>
               <span class="destinations__tile-body">
                 <span class="destinations__tile-title">Enable manager usabiltiy</span>
@@ -295,7 +317,8 @@
                 <small class="destinations__tile-caption">*This is the small bottom caption</small>
               </span>
             </a>
-            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b6.png)">
+            <a href="pages/destinazioni.html" class="destinations__tile">
+              <span class="destinations__media" style="background-image:url(assets/images/dest-b6.png)"></span>
               <span class="destinations__overlay"></span>
               <span class="destinations__tile-body">
                 <span class="destinations__tile-title">Book follow break</span>
@@ -305,7 +328,8 @@
             </a>
           </div>
           <div class="destinations__col">
-            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b7.png)">
+            <a href="pages/destinazioni.html" class="destinations__tile">
+              <span class="destinations__media" style="background-image:url(assets/images/dest-b7.png)"></span>
               <span class="destinations__overlay"></span>
               <span class="destinations__tile-body">
                 <span class="destinations__tile-title">Left pulling regroup</span>
@@ -313,17 +337,14 @@
                 <small class="destinations__tile-caption">*This is the small bottom caption</small>
               </span>
             </a>
-            <a href="pages/destinazioni.html" class="destinations__tile" style="background-image:url(assets/images/dest-b8.png)">
+            <a href="pages/destinazioni.html" class="destinations__tile">
+              <span class="destinations__media" style="background-image:url(assets/images/dest-b8.png)"></span>
               <span class="destinations__overlay"></span>
               <span class="destinations__tile-body">
                 <span class="destinations__tile-title">Loss these work</span>
                 <strong class="destinations__tile-price">-35%</strong>
                 <small class="destinations__tile-caption">*This is the small bottom caption</small>
               </span>
-            </a>
-            <a href="pages/destinazioni.html" class="btn btn--red destinations__cta">
-              Scopri di più
-              <img src="assets/icons/arrow-right.svg" alt="" class="btn__icon">
             </a>
           </div>
         </div>
@@ -382,35 +403,71 @@
         </a>
       </div>
     </section>
-        <section class="inspiration">
-      <div class="inspiration__intro">
-        <h2 class="reveal">Hai bisogno di altra ispirazione?</h2>
-        <p class="reveal">Questa sezione è clonata per controllo dei reveal.</p>
-        <h2 class="reveal">Titolo che appare allo scroll</h2>
-        <p class="reveal">Testo che appare allo scroll</p>
-      </div>
 
-      <div class="cards">
-        <a class="card card--safari reveal" href="pages/destinazioni.html">
-          <img src="assets/images/safari.png" alt="Safari">
-          <span class="card__label">Cluster 1</span>
-        </a>
-        <a class="card card--estate reveal" href="pages/destinazioni.html">
-          <img src="assets/images/estate-2025.png" alt="Estate 2025">
-          <span class="card__label">Cluster 2</span>
-        </a>
-        <a class="card card--citybreak reveal" href="pages/destinazioni.html">
-          <img src="assets/images/city-break.png" alt="City Break">
-          <span class="card__label">Cluster 3</span>
-        </a>
-        <a class="card card--adventure reveal" href="pages/destinazioni.html">
-          <img src="assets/images/adventure.png" alt="Adventure">
-          <span class="card__label">Cluster 4</span>
-        </a>
-        <a class="card card--asia reveal" href="pages/destinazioni.html">
-          <img src="assets/images/asia.png" alt="Asia">
-          <span class="card__label">Cluster 5</span>
-        </a>
+    <section class="classic-search" style="background-image:url(assets/images/classic-search-collage-2.png)">
+      <span class="classic-search__overlay"></span>
+      <div class="classic-search__intro reveal">
+        <h2>Non hai trovato quello che cercavi?</h2>
+        <p>Prova il nostro motore di ricerca classico ed esegui una ricerca precisa.</p>
+      </div>
+      <div class="classic-search__card reveal">
+        <div class="classic-search__top">
+          <div class="classic-search__tabs">
+            <button type="button" class="classic-search__tab" data-engine-tab="vacanze">
+              <img src="assets/icons/engine/holiday.svg" alt="">
+              <span>Vacanze</span>
+            </button>
+            <button type="button" class="classic-search__tab is-active" data-engine-tab="crociere">
+              <img src="assets/icons/engine/boat.svg" alt="">
+              <span>Crociere</span>
+            </button>
+            <button type="button" class="classic-search__tab" data-engine-tab="tours">
+              <img src="assets/icons/engine/tour.svg" alt="">
+              <span>Tours</span>
+            </button>
+          </div>
+          <div class="classic-search__pass">
+            <span class="classic-search__pass-icon"><img src="assets/icons/engine/guests.svg" alt=""></span>
+            <span>2 Adulti</span>
+            <img src="assets/icons/engine/plus.svg" alt="" class="classic-search__pass-add">
+          </div>
+        </div>
+        <div class="classic-search__engine">
+          <div class="classic-search__fields">
+            <div class="classic-search__field">
+              <img src="assets/icons/engine/destination.svg" alt="">
+              <div>
+                <p>Dove vuoi andare?</p>
+                <strong>Itinerario</strong>
+              </div>
+            </div>
+            <div class="classic-search__field">
+              <img src="assets/icons/engine/calendar.svg" alt="">
+              <div>
+                <p>Quando vuoi partire?</p>
+                <strong>Data di partenza</strong>
+              </div>
+            </div>
+            <div class="classic-search__field">
+              <img src="assets/icons/engine/anchor.svg" alt="">
+              <div>
+                <p>Da dove parti?</p>
+                <strong>Porto di partenza</strong>
+              </div>
+            </div>
+            <div class="classic-search__field classic-search__field--last">
+              <img src="assets/icons/engine/boat.svg" alt="">
+              <div>
+                <p>Scegli la nave</p>
+                <strong>Nave</strong>
+              </div>
+            </div>
+          </div>
+          <a href="pages/destinazioni.html" class="classic-search__cta">
+            <img src="assets/icons/engine/search.svg" alt="">
+            Cerca
+          </a>
+        </div>
       </div>
     </section>
 
@@ -484,8 +541,9 @@
     <section class="newsletter" style="background-image:url(assets/images/newsletter-bg.png)">
       <span class="newsletter__overlay"></span>
       <div class="newsletter__body reveal">
-        <p class="newsletter__title">Iscriviti alla Newsletter</p>
-        <p class="newsletter__text">Rimani sempre aggiornato con le migliori offerte.</p>
+        <p class="newsletter__title">Iscriviti alla nostra newsletter</p>
+        <p class="newsletter__headline">Viaggia smart,<br>parti prima di tutti.</p>
+        <p class="newsletter__text">Le migliori offerte LAST MINUTE e i consigli dei nostri esperti direttamente nella tua casella email.</p>
         <a href="#" class="btn btn--primary">
           Iscriviti qui
           <img src="assets/icons/arrow-right.svg" alt="" class="btn__icon">
@@ -507,10 +565,10 @@
           <ul>
             <li><a href="pages/chi-siamo.html">Chi Siamo</a></li>
             <li><a href="pages/contatti.html">Contatti</a></li>
-            <li><a href="#">Partnership</a></li>
-            <li><a href="#">Newsletter</a></li>
             <li><a href="#">Prenota un appuntamento</a></li>
-            <li><a href="#">Pubblicità</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Partnership</a></li>
             <li><a href="#">Feedback</a></li>
           </ul>
         </div>
@@ -543,7 +601,6 @@
             <li><a href="#">Tour a terra / Escursioni</a></li>
             <li><a href="#">World Voyages</a></li>
             <li><a href="#">Blog &amp; Guide di viaggio</a></li>
-            <li><a href="#">FAQ</a></li>
           </ul>
         </div>
       </div>
@@ -552,10 +609,8 @@
 
       <div class="footer-legal">
         <div class="footer-legal__company reveal">
-          <h4>Ragione sociale e sede legale:</h4>
-          <p>Kira Viaggi S.R.L.</p>
-          <p>Via dei Sette Metri 5, 00118, Roma (RM)</p>
-          <p>P.IVA: 12555051007</p>
+          <h4>KIRA VIAGGI S.R.L.</h4>
+          <p>+39 06 79890222<br>aziende@kiraviaggi.it<br>Via dei Sette Metri 5, 00118, Roma (RM)</p>
           <img src="assets/images/badge-fondo-vacanze-felici.png" alt="Fondo Vacanze Felici" class="footer-legal__badge">
         </div>
 
@@ -582,8 +637,8 @@
 
     <div class="bottom-bar">
       <div class="bottom-bar__inner">
-        <p class="reveal">Copyright &copy; 2026 KIRA VIAGGI S.R.L. - P.IVA 12555051007</p>
-        <p class="reveal">Proudly powered by <a href="https://www.offertetouroperator.com" target="_blank" rel="noopener">OTO</a></p>
+        <p>Copyright &copy; 2025 KIRA VIAGGI S.R.L. - P.IVA 12555051007</p>
+        <p>Proudly powered by <a href="https://www.offertetouroperator.com" target="_blank" rel="noopener">OTO</a></p>
       </div>
     </div>
   </footer>
@@ -598,11 +653,21 @@
             <h2>Prenota la tua vacanza</h2>
             <p>Segui le istruzioni per trovare la vacanza perfetta per te</p>
           </div>
-          <div class="wizard__progress" aria-hidden="true"><span class="wizard__progress-bar"></span></div>
+          <div class="wizard-mobile-progress">
+            <p class="wizard-mobile-progress__label">STEP <span class="wizard-mobile-progress__current">1</span> DI 4</p>
+            <div class="wizard-mobile-progress__track"><span class="wizard-mobile-progress__fill"></span></div>
+            <ul class="wizard-mobile-progress__steps"></ul>
+          </div>
           <ol class="wizard__stepper"></ol>
           <div class="wizard__summary">
             <span class="wizard__summary-accent" aria-hidden="true"></span>
-            <h3>Hai selezionato</h3>
+            <div class="wizard__summary-head">
+              <h3>Hai selezionato</h3>
+              <button type="button" class="wizard__summary-toggle" data-toggle-details>
+                <span>Apri dettagli</span>
+                <img src="assets/icons/wizard/chevron-down-blue.svg" alt="">
+              </button>
+            </div>
             <div class="wizard__summary-path">
               <p class="wizard__summary-category"></p>
               <p class="wizard__summary-destination"></p>
@@ -611,8 +676,9 @@
           </div>
         </aside>
         <div class="wizard__content">
-          <button type="button" class="wizard__back" data-wizard-back hidden>&larr; Indietro</button>
+          <button type="button" class="wizard__back" hidden></button>
           <div class="wizard__panel"></div>
+          <div class="wizard__actions" hidden></div>
         </div>
       </div>
     </div>
