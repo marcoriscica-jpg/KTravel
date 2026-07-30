@@ -1351,7 +1351,7 @@ body {
 .footer-bar {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 40px var(--gutter);
+  padding: 64px var(--gutter);
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -1475,11 +1475,13 @@ body {
   .footer-legal__meta { flex-direction: row; gap: 64px; }
   .bottom-bar__inner { flex-direction: row; justify-content: space-between; }
 }
-
+/*  SEZIONE COMMENTATA per evitare padding laterale ridondante su viewport > 1440px
+   (il contenitore max-width:1440px, centrato, fa già da inset rispetto
+   al bordo del viewport).
 @media (min-width: 1440px) {
   /* Oltre 1440px il contenitore (max-width:1440px, centrato) fa già da
      inset rispetto al bordo del viewport: il padding laterale diventa
-     ridondante e va azzerato, il contenuto arriva a filo del contenitore. */
+     ridondante e va azzerato, il contenuto arriva a filo del contenitore. 
   .site-header__inner,
   .mobile-menu__list,
   .inspiration,
@@ -1496,7 +1498,7 @@ body {
   .nav-toggle {
     right: 0;
   }
-}
+}*/
 
 /* ===== Wizard modal "Ricerca guidata" ===== */
 .wizard-modal[hidden] {
