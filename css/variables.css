@@ -48,17 +48,38 @@
   --font-wizard: "Poppins", sans-serif;
   --font-wizard-numeric: "Bricolage Grotesque", sans-serif;
 
-  /* Scala tipografica */
-  --fs-h1: 40px;
-  --lh-h1: 48px;
-  --fs-h3: 24px;
-  --lh-h3: 28.8px;
-  --fs-body: 16px;
+  /* Scala tipografica — dimensioni "desktop" prese 1:1 dagli style Figma
+     (--typography-styles-poppins-*). Titoli/display sono fluidi con
+     clamp(): interpolano fra il valore mobile (a 480px di viewport, il
+     breakpoint mobile-small del progetto) e quello desktop (a 1280px)
+     invece di saltare di scatto ai breakpoint di layout. Corpo/caption
+     restano fissi: sotto i 12-18px già in uso, ridurli ulteriormente sui
+     mobile peggiora la leggibilità senza un reale guadagno di spazio.
+     Formula per ricavare ogni clamp (min/max in px, range 480-1280px):
+       slope = (max - min) / 800
+       clamp( minPx, (min - slope*480)Px + (slope*100)vw, maxPx ) */
+  --fs-h1: clamp(24px, 14.4px + 2vw, 40px);          /* h-titles-h1 */
+  --lh-h1: 1.2;
+  --fs-h2: clamp(22px, 16px + 1.25vw, 32px);         /* h-titles-h2 */
+  --lh-h2: 1.2;
+  --fs-h3: clamp(18px, 14.4px + 0.75vw, 24px);       /* h-titles-h3 */
+  --lh-h3: 1.2;
+  --fs-h4: clamp(16px, 13.6px + 0.5vw, 20px);        /* h-titles-h4 */
+  --lh-h4: 1.2;
+  --fs-h5: clamp(16px, 14.8px + 0.25vw, 18px);       /* h-titles-h5 / body-18 */
+  --lh-h5: 1.2;
+  --fs-display: clamp(28px, 16px + 2.5vw, 48px);     /* display-small — i titoli più grandi (hero, classic-search, utilities) */
+  --lh-display: 1.2;
+  --fs-headline-sm: clamp(20px, 15.2px + 1vw, 28px); /* prezzi/accenti in evidenza (promo, destinations) */
+  --lh-headline-sm: 1.2;
+  --fs-body: 16px;      /* body-16 — fisso, il corpo del testo non scala */
   --lh-body: 24px;
-  --fs-body-sm: 14px;
+  --fs-body-sm: 14px;   /* body-14 — fisso */
   --lh-body-sm: 18px;
-  --fs-caption: 12px;
+  --fs-caption: 12px;   /* caption — fisso */
   --lh-caption: 16px;
+  --fs-caption-sm: 10px; /* caption-small — fisso */
+  --lh-caption-sm: 12px;
 
   /* Spaziature / layout */
   --container-max: 1440px;
